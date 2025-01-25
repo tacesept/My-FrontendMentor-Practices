@@ -1,0 +1,86 @@
+/* outfit-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/outfit-v11-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* outfit-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/fonts/outfit-v11-latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  background-color: hsl(212, 45%, 89%);
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  text-align: center;
+  width: 320px;
+  max-width: 80%;
+  padding: 16px 16px 40px 16px;
+  gap: 24px;
+}
+
+.qr-code {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.text h1,
+.text p {
+  padding-inline: 16px;
+}
+
+.text h1 {
+  font-size: 22px;
+  line-height: 1.2;
+  color: hsl(218, 44%, 22%);
+}
+
+.text p {
+  font-size: 15px;
+  line-height: 1.4;
+  color: hsl(216, 15%, 48%);
+  margin: 0;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
