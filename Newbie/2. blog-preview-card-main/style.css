@@ -60,8 +60,7 @@ img {
   border-radius: 10px;
 }
 
-.content,
-.content header {
+.content {
   gap: 12px;
 }
 
