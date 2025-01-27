@@ -1,0 +1,122 @@
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/inter-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/inter-v18-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 100%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: inherit;
+  color: hsl(75, 94%, 57%);
+}
+
+/* main */
+.container,
+.profile-info,
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: clamp(20.438rem, 12.744rem + 32.824vw, 28.5rem);
+  background-color: #1f1f1f;
+  gap: 24px;
+  padding: clamp(1.5rem, 0.546rem + 4.071vw, 2.5rem);
+  border-radius: 12px;
+}
+
+.container img {
+  border-radius: 999px;
+}
+
+.container .profile-info {
+  gap: 24px;
+}
+
+.container .profile-info .profile-name {
+  gap: 4px;
+}
+
+.container .social-links {
+  gap: 16px;
+}
+
+/* buttons */
+.social-links { 
+  align-self: stretch;
+}
+
+.social-links a {
+  width: 100%;
+  padding-block: 12px;
+  background-color: hsl(0, 0%, 20%);
+  border-radius: 8px;
+  transition: 0.5s ease-in-out;
+  transition-property: background-color, color;
+}
+
+.social-links a:hover {
+  color: hsl(0, 0%, 20%);
+  background-color: hsl(75, 94%, 57%);
+}
+
+/* footer */
+.attribution {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(75, 94%, 57%);
+}
+
+ 
