@@ -31,10 +31,12 @@ body {
   background-color: hsl(0, 0%, 8%);
   color: hsl(0, 0%, 100%);
   height: 100vh;
+  width: 100vw;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center; 
   align-items: center;
-  text-align: center;
 }
 
 img {
@@ -90,6 +92,7 @@ h2 {
 
 /* buttons */
 .social-links { 
+  text-align: center;
   align-self: stretch;
 }
 
@@ -108,9 +111,7 @@ h2 {
 }
 
 /* footer */
-.attribution {
-  position: absolute;
-  bottom: 5%;
+.attribution { 
   width: 100%;
   font-size: 11px;
   text-align: center;
