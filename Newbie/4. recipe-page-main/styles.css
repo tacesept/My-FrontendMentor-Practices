@@ -1,0 +1,188 @@
+/* outfit-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/outfit-v11-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* outfit-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/fonts/outfit-v11-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* outfit-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/outfit-v11-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: hsl(30, 10%, 34%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1 {
+  color: hsl(24, 5%, 18%);
+  font-size: clamp(2.25rem, 2.011rem + 1.018vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.details h2 {
+  color: hsl(332, 51%, 32%);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+h2 {
+  color: hsl(14, 45%, 36%);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+li::marker {
+  color: hsl(332, 51%, 32%);
+  font-weight: bold;
+}
+
+hr {
+  border: 0; /* Remove default border */
+  border-top: 1px solid hsl(30, 10%, 34%); /* Set a custom thin border */
+}
+
+/* layouts */
+.contents,
+.contents .details,
+.contents .header,
+.contents .ingredients,
+.contents .instructions,
+.contents .nutrition {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.contents {
+  gap: 20px;
+  padding: 40px 32px;
+  list-style-position: inside;
+}
+
+.contents .header,
+.contents .ingredients,
+.contents .instructions,
+.contents .nutrition {
+  gap: 24px;
+}
+
+.contents .details {
+  background-color: hsl(330, 100%, 98%);
+  border-radius: 12px;
+  padding: 24px;
+  gap: 16px;
+}
+
+/* table */
+.nutrition-table {
+  border-collapse: collapse;
+}
+
+.nutrition-table thead tr {
+  text-align: left;
+}
+
+.nutrition-table th {
+  padding-block-end: 12px;
+}
+
+.nutrition-table tr:not(:last-child) td {
+  padding-block: 12px;
+}
+
+.nutrition-table tr:last-child td {
+  padding-block-start: 12px;
+}
+
+.nutrition-table th:first-child,
+.nutrition-table td:first-child {
+  padding-inline: 32px 8px;
+  font-weight: 400;
+}
+
+.nutrition-table th:last-child,
+.nutrition-table td:last-child {
+  color: hsl(332, 51%, 32%);
+  padding-inline: 8px 32px;
+  font-weight: bold;
+}
+
+th {
+  border-bottom: 1px solid #ddd;
+}
+
+tr:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+/* footer */
+.attribution {
+  padding-bottom: 24px;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* media queries */
+@media screen and (min-width: 768px) {
+  body {
+    background-color: hsl(30, 54%, 90%);
+    padding-top: 128px;
+  }
+  .container {
+    width: clamp(38.5rem, 29.929rem + 17.857vw, 46rem);
+    padding: 40px;
+    border-radius: 24px;
+  }
+
+  .container img {
+    border-radius: 12px;
+  }
+
+  .contents {
+    padding: 40px 0;
+  }
+}
