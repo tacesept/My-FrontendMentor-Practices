@@ -85,7 +85,8 @@ hr {
 .header,
 .contents .ingredients,
 .contents .instructions,
-.contents .nutrition {
+.contents .nutrition,
+.contents .lists {
   display: flex;
   flex-direction: column;
 }
@@ -117,6 +118,10 @@ hr {
   border-radius: 12px;
   padding: 24px;
   gap: 16px;
+}
+
+.contents .lists {
+  gap: 8px;
 }
 
 /* table */
