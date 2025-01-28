@@ -74,6 +74,11 @@ li::marker {
   font-weight: bold;
 }
 
+li {
+  margin-left: 14px;
+  padding-left: 16px;
+}
+
 hr {
   border: 0; /* Remove default border */
   border-top: 1px solid hsl(30, 10%, 34%); /* Set a custom thin border */
@@ -103,7 +108,7 @@ hr {
 .contents {
   gap: 20px;
   padding: 32px 32px;
-  list-style-position: inside;
+  list-style-position: outside;
 }
 
 .header,
