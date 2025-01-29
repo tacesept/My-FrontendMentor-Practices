@@ -135,4 +135,22 @@ img {
   .product-card img {
     border-radius: 10px 0 0 10px;
   }
+
+  .product-card .product-info {
+    padding: 32px;
+  }
+
+  /* spacing */
+  .product-info .category {
+    margin-bottom: 20px;
+  }
+  .product-info .product-title {
+    margin-bottom: 24px;
+  }
+  .product-info .description {
+    margin-bottom: 29px;
+  }
+  .product-info .price {
+    margin-bottom: 30px;
+  }
 }
