@@ -67,7 +67,7 @@ img {
   color: hsl(212, 21%, 14%);
 }
 .product-info .description {
-  font-size: 1.4375rem; /* 23px */
+  font-size: 0.875rem; /* 14px */
   line-height: 23px;
   margin-bottom: 24px;
   color: hsl(228, 12%, 48%);
