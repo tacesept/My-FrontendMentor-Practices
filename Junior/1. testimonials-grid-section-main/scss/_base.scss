@@ -1,0 +1,165 @@
+:root {
+  --color-primary: hsl(263, 55%, 52%);
+  --color-primary-dark: #48556a;
+  --color-primary-darker: hsl(219, 29%, 14%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-gray: hsl(0, 0%, 81%);
+  --color-light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-light-grayish-blue);
+}
+
+.main {
+  width: 90%;
+  margin: 4.4375rem auto; 
+  max-width: 1110px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+.profile {
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+}
+
+.grid-card {
+  padding: 1.625rem 2rem 2rem 2rem;
+  color: var(--color-white);
+  border-radius: 8px;
+
+  header,
+  header div {
+    display: flex;
+  }
+  header {
+    align-items: center;
+    gap: 1rem;
+  }
+
+  header div {
+    flex-direction: column;
+    gap: 0.25rem;
+    color: var(--color-white);
+  }
+
+  .testimonial .text {
+    padding-top: 18px;
+  }
+
+  .testimonial .quote {
+    opacity: 0.7;
+    padding-top: 1rem;
+  }
+}
+
+.item1 {
+  background: url(/images/bg-pattern-quotation.svg) no-repeat 90% 0%,
+    var(--color-primary);
+
+  .testimonial .quote {
+    padding-top: 2.5rem;
+    color: var(--color-light-gray);
+  }
+}
+
+.item2 {
+  background: var(--color-primary-dark);
+}
+
+.item3 {
+  background: var(--color-white);
+
+  header div {
+    color: var(--color-primary-dark);
+  }
+
+  .testimonial {
+    color: var(--color-primary-dark);
+  }
+}
+
+.item4 {
+  background: var(--color-primary-darker);
+}
+
+.item5 {
+  background: var(--color-white);
+
+  header div {
+    color: var(--color-primary-dark);
+  }
+
+  .testimonial {
+    color: var(--color-primary-dark);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "item1 item1 item2"
+      "item3 item4 item4"
+      "item5 item5 item5";
+  }
+
+  .item1 {
+    grid-area: item1;
+  }
+  .item2 {
+    grid-area: item2;
+  }
+  .item3 {
+    grid-area: item3;
+  }
+  .item4 {
+    grid-area: item4;
+  }
+  .item5 {
+    grid-area: item5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "item1 item1 item2 item5"
+      "item3 item4 item4 item5";
+  }
+
+  .item1,
+  .item2 {
+    .quote {
+      padding-top: 1rem;
+    }
+  }
+
+  .item3,
+  .item4,
+  .item5 {
+    .quote {
+      padding-top: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+body {
+  font-family: "Barlow Semi Condensed", serif;
+}
+
+.grid-card {
+  header {
+    color: var(--color-primary-dark);
+  }
+
+  header .name {
+    font-size: 0.8125rem;
+    line-height: 0.8125rem;
+  }
+
+  header p {
+    font-size: 0.6875rem;
+    line-height: 0.6875rem;
+    opacity: 0.5;
+  }
+
+  .testimonial .text {
+    font-size: 1.25rem; 
+    font-weight: 600;
+  }
+
+  .testimonial .quote {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.125rem;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

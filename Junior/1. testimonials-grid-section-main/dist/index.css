@@ -1,0 +1,176 @@
+:root {
+  --color-primary: hsl(263, 55%, 52%);
+  --color-primary-dark: #48556a;
+  --color-primary-darker: hsl(219, 29%, 14%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-gray: hsl(0, 0%, 81%);
+  --color-light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-light-grayish-blue);
+}
+
+.main {
+  width: 90%;
+  margin: 4.4375rem auto;
+  max-width: 1110px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+.profile {
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+}
+
+.grid-card {
+  padding: 1.625rem 2rem 2rem 2rem;
+  color: var(--color-white);
+  border-radius: 8px;
+}
+.grid-card header,
+.grid-card header div {
+  display: flex;
+}
+.grid-card header {
+  align-items: center;
+  gap: 1rem;
+}
+.grid-card header div {
+  flex-direction: column;
+  gap: 0.25rem;
+  color: var(--color-white);
+}
+.grid-card .testimonial .text {
+  padding-top: 18px;
+}
+.grid-card .testimonial .quote {
+  opacity: 0.7;
+  padding-top: 1rem;
+}
+
+.item1 {
+  background: url(/images/bg-pattern-quotation.svg) no-repeat 90% 0%, var(--color-primary);
+}
+.item1 .testimonial .quote {
+  padding-top: 2.5rem;
+  color: var(--color-light-gray);
+}
+
+.item2 {
+  background: var(--color-primary-dark);
+}
+
+.item3 {
+  background: var(--color-white);
+}
+.item3 header div {
+  color: var(--color-primary-dark);
+}
+.item3 .testimonial {
+  color: var(--color-primary-dark);
+}
+
+.item4 {
+  background: var(--color-primary-darker);
+}
+
+.item5 {
+  background: var(--color-white);
+}
+.item5 header div {
+  color: var(--color-primary-dark);
+}
+.item5 .testimonial {
+  color: var(--color-primary-dark);
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "item1 item1 item2" "item3 item4 item4" "item5 item5 item5";
+  }
+  .item1 {
+    grid-area: item1;
+  }
+  .item2 {
+    grid-area: item2;
+  }
+  .item3 {
+    grid-area: item3;
+  }
+  .item4 {
+    grid-area: item4;
+  }
+  .item5 {
+    grid-area: item5;
+  }
+}
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "item1 item1 item2 item5" "item3 item4 item4 item5";
+  }
+  .item1 .quote,
+  .item2 .quote {
+    padding-top: 1rem;
+  }
+  .item3 .quote,
+  .item4 .quote,
+  .item5 .quote {
+    padding-top: 1.5rem;
+  }
+}
+body {
+  font-family: "Barlow Semi Condensed", serif;
+}
+
+.grid-card header {
+  color: var(--color-primary-dark);
+}
+.grid-card header .name {
+  font-size: 0.8125rem;
+  line-height: 0.8125rem;
+}
+.grid-card header p {
+  font-size: 0.6875rem;
+  line-height: 0.6875rem;
+  opacity: 0.5;
+}
+.grid-card .testimonial .text {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.grid-card .testimonial .quote {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.125rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}/*# sourceMappingURL=index.css.map */
