@@ -33,6 +33,7 @@ p {
 .wrapper {
   width: 100%;
   max-width: 1440px;
+  max-width: 90rem;
   margin: 0 auto;
 }
 
@@ -41,17 +42,17 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: 1rem;
   text-align: center;
   width: 100%;
-  max-width: 540px;
-  padding-top: 85px;
+  max-width: 33.75rem;
+  padding-top: 5.3125rem;
 }
 
 .header h1 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 200;
-  letter-spacing: 0.17px;
+  letter-spacing: 0.010625rem;
   color: var(--neutral-very-dark-blue);
 }
 
@@ -61,15 +62,15 @@ p {
 }
 
 .header p {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 400;
-  letter-spacing: 0.1px;
-  line-height: 25px;
+  letter-spacing: 0.00625rem;
+  line-height: 1.5625rem;
 }
 
 /* main */
 .main {
-  margin-top: 76px;
+  margin-top: 4.75rem;
 }
 
 .main .cards-wrapper,
@@ -81,30 +82,30 @@ p {
 
 .main .cards-wrapper {
   align-items: center;
-  row-gap: 25px;
-  padding-inline: 32px;
-  max-width: 1110px;
+  row-gap: 1.5625rem;
+  padding-inline: 2rem;
+  max-width: 69.375rem;
 }
 
 .main .card {
-  gap: 33px;
-  padding: 28px;
-  border-radius: 8px;
+  gap: 2.0625rem; /* 33px to rem */
+  padding: 1.75rem; /* 28px to rem */
+  border-radius: 0.5rem; /* 8px to rem */
   background-color: var(--neutral-very-light-gray);
-  box-shadow: 0 15px 30px -11px var(--primary-blue);
+  box-shadow: 0 0.9375rem 1.875rem -0.6875rem var(--primary-blue); /* 0 15px 30px -11px to rem */
   width: 100%;
 }
 
 .main .card h2 {
-  font-size: 20px;
+  font-size: 1.25rem; /* 20px to rem */
   font-weight: 600;
 }
 
 .main .card p {
-  font-size: 13px;
+  font-size: 0.8125rem; /* 13px to rem */
   font-weight: 400;
-  line-height: 23px;
-  letter-spacing: 0.09px;
+  line-height: 1.4375rem; /* 23px to rem */
+  letter-spacing: 0.005625rem; /* 0.09px to rem */
 }
 
 .main .card img {
@@ -112,28 +113,28 @@ p {
 }
 
 .main .card-container {
-  row-gap: 33px;
+  row-gap: 2.0625rem; /* 33px to rem */
   width: 100%;
 }
 
 /* top border */
 .main .supervisor {
-  border-top: 4px solid var(--primary-cyan);
+  border-top: 0.25rem solid var(--primary-cyan); /* 4px to rem */
 }
 .main .team-builder {
-  border-top: 4px solid var(--primary-red);
+  border-top: 0.25rem solid var(--primary-red); /* 4px to rem */
 }
 .main .karma {
-  border-top: 4px solid var(--primary-orange);
+  border-top: 0.25rem solid var(--primary-orange); /* 4px to rem */
 }
 .main .calculator {
-  border-top: 4px solid var(--primary-blue);
+  border-top: 0.25rem solid var(--primary-blue); /* 4px to rem */
 }
 
 /* footer */
 .attribution {
-  margin-top: 50px;
-  font-size: 11px;
+  margin-top: 3.125rem; /* 50px to rem */
+  font-size: 0.6875rem; /* 11px to rem */
   text-align: center;
 }
 
@@ -145,22 +146,22 @@ p {
 @media (min-width: 768px) {
   /* header section */
   .header {
-    padding-top: 80px;
+    padding-top: 5rem; /* 80px to rem */
   }
   .header h1 {
-    font-size: 36px;
+    font-size: 2.25rem; /* 36px to rem */
   }
 
   /* main section */
   .main .cards-wrapper {
     flex-direction: row;
     justify-content: center;
-    gap: 30px;
+    gap: 1.875rem; /* 30px to rem */
     margin-inline: auto;
   }
   .main .card {
     align-self: center;
-    max-width: 350px;
+    max-width: 21.875rem; /* 350px to rem */
   }
 
   .main .card-container {
