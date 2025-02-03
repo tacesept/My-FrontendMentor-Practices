@@ -1,0 +1,370 @@
+/* red-hat-display-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/red-hat-display-v20-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* red-hat-display-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/red-hat-display-v20-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --color-cyan-300: #8fe3f9;
+  --color-cyan-600: #4d96a9;
+  --color-purple-300: #d9b8ff;
+  --color-purple-600: #855fb1;
+  --color-slate-300: #d1d1df;
+  --color-slate-600: #87879d;
+  --color-slate-900: #28283d;
+  --color-white: #fafafa;
+
+  --all-p-fs: clamp(1rem, 0.727rem + 0.568vw, 1.125rem);
+
+  --header-nav: 3rem;
+  --header-hero-img-height: 160px; /* fixed size */
+  --header-hero-bg-m-btn: 3rem;
+  --header-hero-pd-bl: 4rem 2rem;
+  --header-hero-h1: 2.5rem;
+  --header-hero-buttons-gap: 1rem;
+  --header-hero-wrapper-gap: 1.5rem;
+
+  --main-grid-gap: 1rem;
+  --main-gird-pd-inline: 2rem;
+  
+  --footer-cta-gap: 1.5rem; 
+}
+
+/*---------------------------------------- Base ----------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-weight: 900;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  font-weight: 500;
+  font-size: var(--all-p-fs);
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+.button {
+  line-height: 1.1;
+}
+
+p,
+.subheading {
+  line-height: 1.5;
+}
+
+/*---------------------------------------- Header section ----------------------------------------*/
+.header nav {
+  padding-top: var(--header-nav);
+  text-align: center;
+}
+
+.header .logo {
+  width: fit-content;
+}
+
+.header .hero::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: var(--header-hero-img-height);
+  margin-bottom: var(--header-hero-bg-m-btn);
+  background: url(assets/tablet/image-hero.png) no-repeat center center;
+  background-size: auto 100%;
+  z-index: -1;
+}
+
+.header .hero {
+  position: relative;
+  width: 100%;
+  max-width: 1440px; /* fixed size */
+  margin-inline: auto;
+  padding-block: var(--header-hero-pd-bl);
+  text-align: center;
+}
+
+.header .wrapper {
+  width: 80%;
+  max-width: 448.3px; /* fixed size */
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--header-hero-wrapper-gap);
+}
+
+.header .hero h1 {
+  color: var(--color-slate-900);
+  font-size: var(--header-hero-h1);
+}
+
+.header .hero p {
+  color: var(--color-slate-600);
+}
+
+.header .hero .buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--header-hero-buttons-gap);
+}
+
+/*---------------------------------------- Main section ----------------------------------------*/
+.main {
+  max-width: 1120px; /* fixed size */
+  margin-inline: auto;
+}
+
+.main .step-indicator {
+  padding-bottom: 4rem;
+}
+
+.main .image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-inline: var(--main-gird-pd-inline);
+  gap: var(--main-grid-gap);
+}
+
+.main .image-grid img {
+  border-radius: 8px; /* fixed size */
+}
+
+.main .meeting-info {
+  padding-block: 4rem;
+  text-align: center;
+  width: 80%;
+  max-width: 544px; /* fixed size */
+  margin-inline: auto;
+}
+
+.main .meeting-info .subheading,
+.main .meeting-info h2 {
+  max-width: 455px; /* fixed size */
+  margin-inline: auto;
+}
+
+.main .meeting-info .subheading {
+  color: var(--color-cyan-600);
+  font-size: clamp(0.75rem, 0.624rem + 0.537vw, 1rem);
+}
+
+.main .meeting-info h2 {
+  padding-block: 1rem 2rem;
+  color: var(--color-slate-900);
+  font-size: clamp(2rem, 1.748rem + 1.074vw, 2.5rem);
+}
+
+.main .meeting-info p {
+  color: var(--color-slate-600);
+}
+
+/*---------------------------------------- Footer section ----------------------------------------*/
+.footer {
+  max-width: 1440px; /* fixed size */
+  margin-inline: auto;
+  margin-top: 7.375rem;
+  position: relative;
+}
+
+.footer .step-indicator {
+  position: absolute;
+  top: -6.75rem;
+  left: 50%;
+  transform: translateX(-50%); /* Center it */
+  z-index: 1;
+}
+
+.footer .wrapper {
+  background: linear-gradient(rgba(77, 150, 168, 0.9), rgba(77, 150, 168, 0.9)),
+    url("assets/mobile/image-footer.jpg") no-repeat center/cover;
+}
+
+.footer .cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--footer-cta-gap);
+  padding-block: 4rem;
+  max-width: 1120px; /* fixed size */
+  margin-inline: auto;
+  text-align: center;
+}
+
+.footer .cta h2,
+.footer .cta p {
+  max-width: 554px; /* fixed size */
+  color: var(--color-white);
+}
+
+.footer .cta h2 {
+  font-size: clamp(2rem, 0.909rem + 2.273vw, 2.5rem);
+}
+
+/*---------------------------------- step-indicator component ----------------------------------*/
+.step-indicator::before,
+.step-indicator span {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid var(--color-slate-300); /* fixed size */
+}
+
+.step-indicator::before {
+  content: "";
+  width: 1px; /* fixed size */
+  height: 80px; /* fixed size */
+}
+
+.step-indicator span {
+  width: fit-content;
+  padding: 1rem 1.1875rem;
+  border-radius: 50%;
+  background-color: var(--color-white);
+}
+
+/*---------------------------------------- button component ----------------------------------------*/
+.button {
+  color: var(--color-white);
+  padding: 1rem 2.5rem;
+  width: fit-content;
+  border-radius: 29px; /* fixed size */
+  font-size: 1rem;
+  display: flex;
+  gap: 0.25rem;
+}
+/* ------------------ for cyan button ------------------ */
+.cyan {
+  background-color: var(--color-cyan-600);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cyan span {
+  color: var(--color-cyan-300);
+}
+
+.cyan:hover {
+  background-color: #71c0d4;
+}
+/* ------------------ for purple button ------------------ */
+.purple {
+  background-color: var(--color-purple-600);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.purple span {
+  color: var(--color-purple-300);
+}
+
+.purple:hover {
+  background-color: #b18bdd;
+}
+
+/*---------------------------------------- responsive ----------------------------------------*/
+@media (min-width: 48em) {
+  :root {
+    --header-hero-img-height: 303px; /* fixed size */
+    --header-hero-bg-m-btn: 4.5rem;
+    --header-hero-h1: clamp(3rem, 0.818rem + 4.545vw, 4rem);
+    --header-hero-buttons-gap: 1.0625rem;
+    --header-hero-pd-bl: 4rem;
+
+    --main-grid-gap: 1.5rem;
+    --main-gird-pd-inline: 2.75rem;
+  }
+
+  .header .hero .buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .main .image-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer .wrapper {
+    background: linear-gradient(
+        rgba(77, 150, 168, 0.9),
+        rgba(77, 150, 168, 0.9)
+      ),
+      url("assets/tablet/image-footer.jpg") no-repeat center/cover;
+  }
+}
+
+@media (min-width: 70em) {
+  :root {
+    --header-nav: 5rem;
+    --header-hero-wrapper-gap: 2rem;
+
+    --main-grid-gap: 2rem;
+    --main-gird-pd-inline: 0;
+
+    --footer-cta-gap: 2rem;
+  }
+
+  .header .wrapper {
+    padding-block: 1.4375rem;
+  }
+
+  .footer .wrapper {
+    background: linear-gradient(
+        rgba(77, 150, 168, 0.9),
+        rgba(77, 150, 168, 0.9)
+      ),
+      url("assets/desktop/image-footer.jpg") no-repeat center/cover;
+  }
+
+  .footer .cta {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: start;
+    align-items: start; 
+  }
+
+  .footer .cta h2 {
+    max-width: 445px; /* fixed size */
+  }
+
+  .footer .cta p {
+    max-width: 335px; /* fixed size */
+  }
+}
+
+/*------------------------------ for background not to overlap text ------------------------------*/
+@media (min-width: 77.5em) {
+  .header .hero::before {
+    position: absolute;
+    background: url(assets/desktop/image-hero-left.png) no-repeat left center,
+      url(assets/desktop/image-hero-right.png) no-repeat right center;
+  }
+}
