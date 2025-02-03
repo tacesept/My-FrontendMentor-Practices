@@ -40,6 +40,7 @@
   --main-gird-pd-inline: 2rem;
   
   --footer-cta-gap: 1.5rem; 
+  --footer-cta-pd-block: 4rem;
 }
 
 /*---------------------------------------- Base ----------------------------------------*/
@@ -216,7 +217,7 @@ p,
   flex-direction: column;
   align-items: center;
   gap: var(--footer-cta-gap);
-  padding-block: 4rem;
+  padding-block: var(--footer-cta-pd-block);
   max-width: 1120px; /* fixed size */
   margin-inline: auto;
   text-align: center;
@@ -330,6 +331,7 @@ p,
     --main-gird-pd-inline: 0;
 
     --footer-cta-gap: 2rem;
+    --footer-cta-pd-block: 7rem;
   }
 
   .header .wrapper {
