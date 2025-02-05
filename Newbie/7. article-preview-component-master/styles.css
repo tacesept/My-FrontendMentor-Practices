@@ -49,6 +49,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--color-grey-200);
 }
 
 h1 {
@@ -104,6 +105,7 @@ p {
   flex-direction: column;
   border-radius: 10px;
   position: relative;
+  width: 100%;
 }
 
 .main img {
@@ -212,6 +214,11 @@ p {
 }
 
 @media (min-width: 48em) {
+  body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   .main {
     --main-mx-width: 38rem;
     --main-article-preview-pd: 2.5625rem 2.25rem 2.5625rem 2rem;
