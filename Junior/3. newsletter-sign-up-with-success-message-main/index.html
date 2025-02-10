@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        padding-top: 20px;
+        font-size: 11px;
+        text-align: center;
+        color: #fff;
+      }
+      .attribution a {
+        color: gold;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main" id="subscriptionForm">
+      <picture>
+        <source
+          srcset="/assets/images/illustration-sign-up-desktop.svg"
+          media="(min-width: 928px)"
+        />
+        <img
+          src="/assets/images/illustration-sign-up-mobile.svg"
+          alt="illustration-sign-up-mobile"
+        />
+      </picture>
+
+      <section class="newsletter">
+        <div class="content">
+          <h1>Stay updated!</h1>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+          <ul class="list">
+            <li class="list-item">
+              <img
+                src="/assets/images/icon-list.svg"
+                width="21"
+                height="21"
+                alt=""
+              />Product discovery and building what matters
+            </li>
+            <li class="list-item">
+              <img
+                src="/assets/images/icon-list.svg"
+                width="21"
+                height="21"
+                alt=""
+              />Measuring to ensure updates are a success
+            </li>
+            <li class="list-item">
+              <img
+                src="/assets/images/icon-list.svg"
+                width="21"
+                height="21"
+                alt=""
+              />And much more!
+            </li>
+          </ul>
+        </div>
+
+        <form class="form" id="newsletterForm" novalidate>
+          <p class="form-group">
+            <label for="email" class="mail-error"
+              ><span>Email address</span
+              ><span class="error-msg" id="errorMsg"
+                >Valid email required</span
+              ></label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="email@company.com"
+              required
+            />
+          </p>
+          <button type="submit">Subscribe to monthly newsletter</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Thank you message -->
+    <div id="thankYouMessage">
+      <div class="container">
+        <img
+          src="/assets/images/icon-success.svg"
+          alt="icon-success"
+          width="64"
+          height="64"
+        />
+        <h1>Thanks for subscribing!</h1>
+        <p>
+          A confirmation email has been sent to
+          <span class="bold" id="userEmail"></span>. Please open it and click
+          the button inside to confirm your subscription.
+        </p>
+      </div>
+      <button id="closeBtn">Dismiss message</button>
+    </div>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/tacesept">T</a>.
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const subscriptionForm = document.getElementById("subscriptionForm");
+        const thankYouMessage = document.getElementById("thankYouMessage");
+        const closeBtn = document.getElementById("closeBtn");
+        const userEmailSpan = document.getElementById("userEmail");
+
+        const form = document.getElementById("newsletterForm");
+        const emailInput = document.getElementById("email");
+        const errorMsg = document.getElementById("errorMsg");
+
+        form.addEventListener("submit", (e) => {
+          if (!emailInput.checkValidity()) {
+            e.preventDefault();
+            emailInput.classList.add("error");
+            errorMsg.style.display = "block";
+          } else {
+            e.preventDefault();
+            userEmailSpan.textContent = emailInput.value;
+
+            subscriptionForm.style.display = "none";
+            thankYouMessage.style.display = "flex";
+          }
+        });
+
+        // Reset styles when user types
+        emailInput.addEventListener("input", () => {
+          emailInput.classList.remove("error");
+          errorMsg.style.display = "none";
+        });
+
+        closeBtn.addEventListener("click", function () {
+          subscriptionForm.style.display = "flex";
+          thankYouMessage.style.display = "none";
+
+          document.getElementById("email").value = "";
+        });
+      });
+    </script>
+  </body>
+</html>

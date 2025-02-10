@@ -1,0 +1,214 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --fz-h1: 40px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #36384d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: var(--fz-h1);
+  line-height: 1;
+}
+
+img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+.main,
+#thankYouMessage {
+  --main-mx-width: 375px;
+  width: 100%;
+  max-width: var(--main-mx-width);
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.main,
+.newsletter,
+.newsletter :where(.content, .form, .list, .list-item, .form-group) {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter {
+  width: 100%;
+  padding: 40px 24px;
+  gap: 40px;
+}
+
+.newsletter .list {
+  gap: 10px;
+}
+
+.newsletter .list-item {
+  flex-direction: row;
+  gap: 16px;
+}
+
+.newsletter .list-item img {
+  width: 21px;
+}
+
+.newsletter :where(.content, .form) {
+  gap: 24px;
+}
+
+/* form feature */
+.form .form-group {
+  gap: 8px;
+}
+
+.form .form-group label {
+  font-size: 12px;
+}
+
+.form .mail-error {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form .error-msg {
+  display: none;
+  color: #ff6155;
+}
+
+input:invalid:focus {
+  outline: solid 2px red;
+}
+
+input:valid:focus {
+  outline: solid 2px green;
+}
+
+.error {
+  background-color: hsla(4, 100%, 67%, 0.15);
+  color: red;
+  border: 1px solid red;
+}
+
+.bold {
+  font-weight: bold;
+}
+/* disable button when email input is worng */
+/* 
+form:has(input:invalid) button[type="submit"] {
+  opacity: 0.6;
+  pointer-events: none;
+} */
+
+.form :where(.form-group input, button),
+button {
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: solid 1px hsla(243, 28%, 13%, 0.25);
+}
+
+button {
+  color: #fff;
+  background-color: #242742;
+  cursor: pointer; 
+}
+
+button:hover {
+  color: #fff;
+  background: linear-gradient(
+    82deg,
+    rgba(255, 106, 58, 1) 0%,
+    rgba(255, 82, 123, 1) 100%
+  ); 
+  box-shadow: 0px 16px 32px 0px rgba(255,97,85,1);
+  border-color: transparent;
+}
+
+#thankYouMessage {
+  --pd: 40px 24px;
+  --container-pd-top: 149px;
+  --gap: 263px;
+  --mx-width: 375px;
+  --container-h1-pd-block: 40px 24px;
+  display: none; /* Initially hidden */
+  width: 100%;
+  padding: var(--pd);
+  flex-direction: column;
+  gap: var(--gap);
+  max-width: var(--mx-width);
+}
+
+#thankYouMessage .container {
+  padding-top: var(--container-pd-top);
+}
+
+#thankYouMessage .container img {
+  width: 64px;
+}
+
+#thankYouMessage .container h1 {
+  padding-block: var(--container-h1-pd-block);
+}
+
+@media (min-width: 928px) {
+  :root {
+    --fz-h1: 56px;
+  }
+
+  .main {
+    --main-mx-width: 928px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 24px 64px;
+  }
+
+  .newsletter {
+    max-width: 376px;
+    padding: 0;
+  }
+
+  #thankYouMessage {
+    --pd: 48px 64px 64px;
+    --container-pd-top: 0px;
+    --gap: 40px;
+    --mx-width: 504px;
+    --container-h1-pd-block: 40px 24px;
+  }
+}
