@@ -1,0 +1,237 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Rubik", serif;
+  background-color: #0e1323;
+  color: white;
+  padding-block: 81px;
+}
+
+ul {
+  list-style: none;
+  color: #7078c9;
+}
+
+/* fonts */
+.profile-card .profile-info .report-for,
+.card .stats .lastWeekHours {
+  color: #bbc0ff;
+  font-size: 15px;
+}
+
+.profile-card .name {
+  font-size: var(--fs-name);
+}
+
+.cards .title span,
+.timeframes li {
+  font-size: 18px;
+}
+
+.cards .hours {
+  font-size: var(--fs-cards-hours);
+}
+
+/* main */
+.main {
+  --fs-name: 24px;
+  --fs-cards-hours: 32px;
+  --profile-n-cards-width: 80%;
+  --profile-n-cards-mx-width: 500px;
+  --card-mx-width: 500px;
+  --profile-pd: 35px 32px;
+  --profile-gap: 20px;
+  --cards-pd-top: 38px;
+  --cards-container-gap: 8px;
+  --cards-container-pd: 28px 24px;  
+
+  max-width: 1110px;
+  align-items: center;
+}
+
+.main,
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profile-card,
+.profile-card .profile,
+.profile-card .profile-info,
+.profile-card .timeframes {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card {
+  width: var(--profile-n-cards-width);
+  max-width: var(--profile-n-cards-mx-width);
+  background-color: #1c204b;
+  border-radius: 15px;
+}
+
+.profile-card .profile {
+  width: 100%;
+  background-color: #5747ea;
+  padding: var(--profile-pd);
+  flex-direction: row;
+  align-items: center;
+  gap: var(--profile-gap);
+  border-radius: 15px;
+}
+
+.profile-card .profile img {
+  width: 64px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  outline: solid 3px white;
+}
+
+.profile-card .profile-info {
+  gap: 3px;
+}
+
+.profile-card .timeframes {
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-block: 24px;
+}
+
+.profile-card .timeframes li {
+  cursor: pointer;
+}
+
+.profile-card .timeframes li:hover {
+  color: gold;
+}
+
+.profile-card .timeframes li:active {
+  color: white;
+}
+
+.profile-card .timeframes li.active {
+  color: white;
+}
+
+/* cards */
+.cards {
+  width: var(--profile-n-cards-width);
+  max-width: var(--card-mx-width);
+}
+
+.card {
+  width: 100%;
+  padding-top: var(--cards-pd-top);
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 122px;
+  z-index: -1;
+  border-radius: 15px;
+}
+
+.card[data-category="Work"]::before {
+  background: url(/images/icon-work.svg) no-repeat top -10px right 15px, #ff8b64;
+}
+.card[data-category="Play"]::before {
+  background: url(/images/icon-play.svg) no-repeat top -10px right 15px, #55c2e6;
+}
+.card[data-category="Study"]::before {
+  background: url(/images/icon-study.svg) no-repeat top -10px right 15px,
+    #ff5e7d;
+}
+.card[data-category="Exercise"]::before {
+  background: url(/images/icon-exercise.svg) no-repeat top -10px right 15px,
+    #4bcf82;
+}
+.card[data-category="Social"]::before {
+  background: url(/images/icon-social.svg) no-repeat top -10px right 15px,
+    #7335d2;
+}
+.card[data-category="Self Care"]::before {
+  background: url(/images/icon-self-care.svg) no-repeat top -10px right 15px,
+    #f1c75b;
+}
+
+.card .container {
+  background-color: #1c204b;
+  padding: var(--cards-container-pd);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cards-container-gap);
+  cursor: pointer;
+}
+
+.card .container:active {
+  background-color: #33397a;
+}
+
+.card .title,
+.card .stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 1110px) {  
+  body {
+    padding-block: 241px;
+  }
+
+  .main {
+    --fs-name: 40px;
+    --fs-cards-hours: 56px;
+    --profile-n-cards-width: 100%;
+    --profile-n-cards-mx-width: 255px;
+    --card-mx-width: unset;
+    --profile-pd: 37px 32px 80px;
+    --profile-gap: 43px;
+    --cards-pd-top: 45px;
+    --cards-container-gap: 24px;
+    --cards-container-pd: 29px 35px 32px 30px;
+ 
+    flex-direction: row;
+    align-items: stretch;
+    margin-inline: auto;
+  }
+
+  .profile-card .profile {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .profile-card .timeframes {
+    flex-direction: column;
+    gap: 21px;
+    padding: 26px 32px 32px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card .stats {
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
+}
