@@ -24,7 +24,7 @@ ul {
 
 /* fonts */
 .profile-card .profile-info .report-for,
-.card .stats .lastWeekHours {
+.card .stats .previousDate {
   color: #bbc0ff;
   font-size: 15px;
 }
