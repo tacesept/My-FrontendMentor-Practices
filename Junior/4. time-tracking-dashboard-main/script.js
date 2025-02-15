@@ -18,6 +18,13 @@ fetch("data.json")
 const renderCards = (displayStat) => {
   cards.innerHTML = ""; // Clear previous cards
 
+  const labels = {
+    daily: "Yesterday",
+    weekly: "Last Week",
+    monthly: "Last Month",
+  };
+  let label = labels[displayStat] || "Last Week"; // Default if undefined
+
   cardData.forEach((card) => {
     const cardElement = document.createElement("div");
     cardElement.classList.add("card");
@@ -26,7 +33,7 @@ const renderCards = (displayStat) => {
 
     let timeframe = card.timeframes[displayStat];
     let hours = timeframe.current;
-    let lastWeekHours = timeframe.previous;
+    let previousDate = timeframe.previous;
 
     cardElement.innerHTML = `
             <div class="container">
@@ -36,7 +43,7 @@ const renderCards = (displayStat) => {
               </div>
               <div class="stats">
                 <span class="hours">${hours}hrs</span>
-                <span class="lastWeekHours">Last Week - ${lastWeekHours}hrs</span>
+                <span class="previousDate">${label} - ${previousDate}hrs</span>
               </div>
             </div>
             `;
