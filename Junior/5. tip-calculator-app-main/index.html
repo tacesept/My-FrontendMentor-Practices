@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <header class="header">
+      <img src="/images/logo.svg" alt="logo" class="logo" />
+    </header>
+    <main class="main">
+      <section class="input-container">
+        <section class="bill-section">
+          <label for="bill">Bill</label>
+          <div class="input">
+            <img src="/images/icon-dollar.svg" alt="icon-dollar" />
+            <input
+              type="text"
+              placeholder="0-500k"
+              id="bill"
+              autocomplete="off"
+            />
+          </div>
+        </section>
+
+        <section class="tip-section">
+          <label>Select Tip %</label>
+          <div class="tip-buttons">
+            <button>5%</button>
+            <button>10%</button>
+            <button>15%</button>
+            <button>25%</button>
+            <button>50%</button>
+            <input
+              type="text"
+              placeholder="0-100%"
+              id="custom-tip"
+              autocomplete="off"
+            />
+          </div>
+        </section>
+
+        <section class="num-of-people">
+          <label for="numberOfPeople">
+            <span>Number of People</span>
+            <span class="error-msg">Can’t be zero</span>
+          </label>
+          <div class="input">
+            <img src="/images/icon-person.svg" alt="icon-person" />
+            <input
+              type="text"
+              placeholder="0"
+              value="1"
+              id="numberOfPeople"
+              autocomplete="off"
+            />
+          </div>
+        </section>
+      </section>
+
+      <section class="output-container">
+        <div class="result">
+          <div class="container">
+            <p class="label">
+              <span>Tip Amount</span>
+              <span class="per-person">/ person</span>
+            </p>
+            <span id="tip-amount" class="amount">$0.00</span>
+          </div>
+          <div class="container">
+            <p class="label">
+              <span>Total</span>
+              <span class="per-person">/ person</span>
+            </p>
+            <span id="total-amount" class="amount">$0.00</span>
+          </div>
+        </div>
+
+        <button id="resetBtn">Reset</button>
+      </section>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/tacesept">T</a>.
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        /* inputs */
+        const billInput = document.getElementById("bill");
+        const customTipInput = document.getElementById("custom-tip");
+        const numberOfPeopleInput = document.getElementById("numberOfPeople");
+
+        const tipButtons = document.querySelectorAll(".tip-buttons button");
+
+        const tipAmountDisplay = document.getElementById("tip-amount");
+        const totalAmountDisplay = document.getElementById("total-amount");
+        const resetButton = document.getElementById("resetBtn");
+        const errorMessage = document.querySelector(".error-msg");
+        const errorBox = document.querySelector(".num-of-people .input");
+
+        //for input regex
+        document.querySelectorAll('input[type="text"]').forEach((input) => {
+          input.addEventListener("input", function () {
+            // Remove all non-numeric characters, including dots
+            this.value = this.value.replace(/[^0-9]/g, "");
+          });
+        });
+
+        //default values
+        let billValue = 0;
+        let tipPercentage = 0;
+        let numberOfPeople = 1;
+        resetButton.disabled = true;
+
+        function calculateTotals() {
+          const tipAmount =
+            numberOfPeople === 0
+              ? 0
+              : (billValue * (tipPercentage / 100)) / numberOfPeople;
+              
+          const totalAmount =
+            numberOfPeople === 0 ? 0 : billValue / numberOfPeople + tipAmount;
+
+          const formatNumber = (value) => {
+            return value.toLocaleString(undefined, {
+              maximumFractionDigits: 0,
+            });
+          };
+
+          tipAmountDisplay.textContent = `$${formatNumber(tipAmount)}`;
+          totalAmountDisplay.textContent = `$${formatNumber(totalAmount)}`;
+          toggleResetButton();
+        }
+
+        function toggleResetButton() {
+          resetButton.disabled = billValue <= 0;
+        }
+
+        //bill section
+        billInput.addEventListener("input", (e) => {
+          billValue = e.target.value || 0;
+
+          billValue = Math.min(Number(billValue), 500000);
+          e.target.value = billValue;
+
+          calculateTotals();
+        });
+        //tip section
+        tipButtons.forEach((button) => {
+          button.addEventListener("click", (e) => {
+            //use parseFloat because of %
+            tipPercentage = parseFloat(e.target.textContent) || 0;
+            customTipInput.value = "";
+
+            tipButtons.forEach((btn) => btn.classList.remove("active"));
+            e.target.classList.add("active");
+            calculateTotals();
+          });
+        });
+        customTipInput.addEventListener("input", (e) => {
+          tipPercentage = e.target.value || 0;
+
+          tipPercentage = Math.min(Number(tipPercentage), 100);
+          e.target.value = tipPercentage;
+
+          tipButtons.forEach((btn) => btn.classList.remove("active"));
+          calculateTotals();
+        });
+        //number of people section
+        numberOfPeopleInput.addEventListener("input", (e) => {
+          numberOfPeople = e.target.value || 0;
+
+          errorMessage.style.visibility =
+            numberOfPeople === 0 ? "visible" : "hidden";
+          errorBox.classList.toggle("active", numberOfPeople === 0);
+
+          calculateTotals();
+        });
+        //reset button
+        resetButton.addEventListener("click", () => {
+          billInput.value = "";
+          customTipInput.value = "";
+          numberOfPeopleInput.value = "1";
+          tipButtons.forEach((btn) => btn.classList.remove("active"));
+          tipAmountDisplay.textContent = "$0.00";
+          totalAmountDisplay.textContent = "$0.00";
+          billValue = 0;
+          tipPercentage = 0;
+          numberOfPeople = 1;
+          errorMessage.style.display = "none";
+          toggleResetButton();
+        });
+      });
+    </script>
+  </body>
+</html>

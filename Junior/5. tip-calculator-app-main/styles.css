@@ -1,0 +1,235 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: "Space Mono", serif;
+}
+
+body {
+  color: #fff;
+  background-color: #c5e4e7;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+/* Firefox */
+input[type="text"] {
+  width: 100%;
+  border: none;
+  text-align: right;
+  background-color: transparent;
+  font-family: inherit;
+  cursor: pointer; 
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+.input {
+  border-radius: 5px;
+}
+
+.input.focused {
+  outline: 2px solid green; /* Add outline to the parent div */
+}
+
+.header .logo {
+  padding-block: 50px 40px;
+}
+
+.main,
+.main > * {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.main {
+  --main-pd: 32px;
+  --main-out-ctn-pd: 37px 24px 24px;
+  --main-out-ctn-amount-fs: 32px;
+
+  width: 100%;
+  max-width: 920px;
+  background-color: #fff;
+  padding: var(--main-pd);
+  border-radius: 25px;
+}
+
+.input-container :where(input, button) {
+  font-size: 24px;
+}
+
+.input-container input:not(#custom-tip) {
+  color: #00474b;
+}
+
+.input-container #custom-tip {
+  color: #547878;
+}
+
+.input-container label {
+  color: #5e7a7d;
+}
+
+.bill-section,
+.num-of-people,
+.tip-section {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 6px;
+}
+
+:is(.bill-section, .num-of-people) .input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f9fa;
+  padding: 6px 17px 6px 19.28px;
+}
+
+.tip-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.tip-buttons input,
+.tip-buttons button {
+  background-color: #f3f9fa;
+  padding: 6px 17px 6px 17px;
+  border-radius: 5px;
+}
+
+.tip-buttons button {
+  border: none;
+  color: #fff;
+  background-color: #00474b;
+  transition: 300ms ease-in;
+  transition-property: color, background-color;
+}
+
+.tip-buttons button:hover {
+  color: #00474b;
+  background-color: #9fe8df;
+}
+
+.num-of-people label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.num-of-people .error-msg {
+ visibility: hidden;
+  color: #e17457;
+}
+
+.output-container {
+  width: 100%;
+  background-color: #00474b;
+  padding: var(--main-out-ctn-pd);
+  border-radius: 15px;
+}
+
+.result,
+.result > *,
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.result {
+  text-align: left;
+  gap: 20px;
+}
+
+.result .container {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result .per-person {
+  color: #7f9d9f;
+  font-size: 13px;
+}
+
+.result .amount {
+  color: #26c2ae;
+  font-size: var(--main-out-ctn-amount-fs);
+  letter-spacing: -0.67px;
+}
+
+.output-container button {
+  font-size: 20px;
+  color: #00474b;
+  background-color: #26c2ae;
+  border: none;
+  padding-block: 9px;
+  border-radius: 5px;
+  transition: background-color 300ms ease-in;
+}
+
+.output-container button:hover {
+  background-color: #9fe8df;
+}
+
+.tip-buttons .active {
+  color: #00474b;
+  background-color: #26c2ae;
+}
+
+#resetBtn:disabled {
+  background-color: #0d686d; /* Light gray background */
+  color: #00474b; /* Dimmed text color */
+  cursor: not-allowed; /* Shows a 'not-allowed' cursor */
+  opacity: 0.35; /* Makes it look disabled */
+  pointer-events: none; /* Disables hover and click events */
+}
+
+.num-of-people .input.active {
+  outline: solid 2px red;
+  
+}
+
+.attribution {
+  padding-top: 10px;
+  font-size: 11px;
+  text-align: center;
+  color: black;
+}
+.attribution a {
+  color: green;
+}
+
+@media (min-width: 920px) {
+  .main {
+    --main-pd: 32px 32px 32px 48px;
+    --main-out-ctn-pd: 40px;
+    --main-out-ctn-amount-fs: 48px;
+
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .output-container {
+    max-width: 413px;
+    gap: 122px;
+  }
+}
