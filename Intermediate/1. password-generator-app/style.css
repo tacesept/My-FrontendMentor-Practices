@@ -1,0 +1,214 @@
+/* Font Face Declarations */
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono-VariableFont_wght.ttf")
+    format("truetype-variations");
+  font-weight: 100 800; /* Covers the entire weight range */
+}
+
+/* Fallback for browsers that don't support variable fonts */
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/static/JetBrainsMono-Bold.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Reset Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Styles */
+body {
+  font-family: "JetBrains Mono", monospace;
+  background-color: #18171f;
+  color: #e6e5ea;
+}
+
+/* Common Element Styles */
+input,
+label {
+  cursor: pointer;
+}
+
+label:hover {
+  opacity: 0.8;
+}
+
+/* Layout - Main Container */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-block: 4rem;
+  gap: 1rem;
+  width: 90%;
+  max-width: 540px;
+  margin-inline: auto;
+}
+
+main h1 {
+  font-size: clamp(1rem, 5vw, 1.5rem);
+  font-weight: 700;
+  color: #817d92;
+}
+
+/* Password Display Section */
+.password-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #24232c;
+  width: 100%;
+  padding: 1rem;
+}
+
+.password-container input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #e6e5ea;
+  font-size: 1.5rem;
+}
+
+.password-container-copied {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.password-container-copied span {
+  color: #a4ffaf;
+  visibility: hidden;
+}
+
+.password-container-copied span.visible {
+  visibility: visible;
+}
+
+.password-container-copied button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #e6e5ea;
+  cursor: pointer;
+}
+
+.password-container-copied button:hover svg path {
+  fill: #fff;
+}
+
+/* Password Generator Section */
+.password-generator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #24232c;
+  width: 100%;
+  padding: 1rem;
+  accent-color: #a4ffaf;
+  font-size: clamp(1rem, 5vw, 1.125rem);
+}
+
+/* Length Control */
+.password-generator-length {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.password-generator-length label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.password-generator-length #length-value {
+  font-size: clamp(1.5rem, 5vw, 2rem);;
+  color: #a4ffaf;
+ }
+
+/* Options Container */
+.password-generator-options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Strength Indicator */
+.password-generator-strength {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #18171f;
+  padding: 14px 1rem;
+}
+
+.password-generator-strength > span {
+  color: #817d92;
+}
+
+.strength-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.strength-text {
+  font-size: clamp(1.125rem, 5vw, 1.5rem);
+}
+
+.strength-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+  gap: 8px;
+}
+
+.strength-bar div {
+  width: 10px;
+  height: 28px;
+  background-color: transparent;
+  border: 2px solid #e6e5ea;
+}
+
+/* Generate Button */
+.password-generator button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: #a4ffaf;
+  color: #18171f;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: clamp(1rem, 5vw, 1.125rem);
+}
+
+.password-generator button:hover {
+  background-color: #18171f;
+  color: #a4ffaf;
+  border: 2px solid #a4ffaf;
+}
+
+.password-generator button:hover svg path {
+  fill: #a4ffaf;
+}
