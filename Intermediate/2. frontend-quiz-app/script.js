@@ -12,7 +12,11 @@ fetch("data.json")
   })
   .catch((error) => {
     console.error("Error fetching data:", error);
-    main.innerHTML = `<section><h1>Error loading quiz data</h1><p>Please try again later.</p></section>`;
+    main.innerHTML = `
+      <section>
+        <h1>Error loading quiz data</h1>
+        <p>Please try again later.</p>
+      </section>`;
   });
 
 function loadStartScreen() {
@@ -21,14 +25,14 @@ function loadStartScreen() {
     return;
   }
 
-  let renderSubjects = '';
-  data.forEach(subject => {
+  let renderSubjects = "";
+  data.forEach((subject) => {
     renderSubjects += `
       <button>
         <div class="subject-icon" data-subject="${subject.title}">
           <img src="${subject.icon}" alt="${subject.title}" />
         </div>
-        <span>${subject.title}</span>
+        <span class="subject-text">${subject.title}</span>
       </button>
     `;
   });
