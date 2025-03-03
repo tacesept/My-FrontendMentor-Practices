@@ -144,11 +144,17 @@ function loadQuizScreen(index) {
     `)
     .join('');
 
+  const progressPercentage = ((QuizState.currentQuestionIndex + 1) / questions.length) * 100;
+
   elements.main.innerHTML = `
     <section class="question first-section">
-      <p>Question ${QuizState.currentQuestionIndex + 1} of ${questions.length}</p>
-      <p class="question-text">${currentQuestion.question}</p>
-      <div></div>
+      <div class="question-header">
+        <p>Question ${QuizState.currentQuestionIndex + 1} of ${questions.length}</p>
+        <p class="question-text">${currentQuestion.question}</p>
+      </div>
+      <div class="progress-bar">
+        <div class="progress" style="width: ${progressPercentage}%"></div>
+      </div>
     </section> 
     <section class="list second-section">
       ${answersHTML}
