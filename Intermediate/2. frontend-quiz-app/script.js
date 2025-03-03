@@ -41,14 +41,14 @@ function loadStartScreen() {
   });
 
   main.innerHTML = `
-    <section class="hero">
+    <section class="hero first-section">
       <h1>
         <span class="light">Welcome to the</span>
         <span>Frontend Quiz!</span>
       </h1>
       <p>Pick a subject to get started.</p>
     </section> 
-    <section class="list">
+    <section class="list second-section">
       ${renderSubjects} 
     </section>
   `;
@@ -73,14 +73,14 @@ function loadQuizScreen(index) {
   });
 
   main.innerHTML = `
-    <section class="question">
+    <section class="question first-section">
       <p>Question ${currentQuestionIndex + 1} of ${questions.length}</p>
-      <h1>${questions[index].question}</h1>
+      <h1>${questions[currentQuestionIndex].question}</h1>
       <div></div>
     </section> 
-    <section class="list">
+    <section class="list second-section">
       ${renderAnswer}
-      <button class="next-btn">Next</button>
+      <button class="purple-btn next-btn">Next</button>
     </section>
   `;
 }
@@ -91,24 +91,26 @@ function loadNextQuestion() {
 
 function loadResultScreen() {
   main.innerHTML = `
-    <section class="hero">
+    <section class="hero first-section">
       <h1>
         <span class="light">Quiz completed</span>
         <span>You scored...</span>
       </h1> 
     </section> 
-    <section class="list">
-      <div class="icon" data-subject="Score">
-        <div>
+    <section class="result-container second-section">
+      <div class="result" data-subject="Score">
+        <div class="subject-label">
           <div class="icon" data-subject="${data[currentSubjectIndex].title}">
             <img src="${data[currentSubjectIndex].icon}" alt="${data[currentSubjectIndex].title}" />
           </div>
           <span class="text">${data[currentSubjectIndex].title}</span>
         </div>
-        <span>${score}</span>
-        <span>out of ${data[currentSubjectIndex].questions.length}</span>
+        <div class="score">
+          <span>${score}</span>
+          <span>out of ${data[currentSubjectIndex].questions.length}</span>
+        </div>
       </div>
-      <button class="start-btn">Play Again</button>
+      <button class="purple-btn start-btn">Play Again</button>
     </section>
   `;
 }
@@ -140,6 +142,7 @@ document.body.addEventListener("click", (e) => {
   if (e.target.matches(".start-btn")) {
     currentQuestionIndex = 0;
     currentSubjectIndex = 0;
+    headerLeft.innerHTML = "";
     loadStartScreen();
   }
 });
