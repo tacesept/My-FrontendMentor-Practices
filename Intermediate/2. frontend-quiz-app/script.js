@@ -8,6 +8,44 @@ const CONFIG = {
   }
 };
 
+// Theme management
+const ThemeManager = {
+  init() {
+    this.themeToggle = document.getElementById('theme-toggle');
+    this.themeIcons = document.querySelectorAll('.theme-icon');
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-theme');
+      this.themeToggle.checked = true;
+      this.updateThemeIcons(true);
+    }
+    
+    // Add event listener for theme toggle
+    this.themeToggle.addEventListener('change', () => {
+      const isDark = this.themeToggle.checked;
+      this.toggleTheme(isDark);
+    });
+  },
+  
+  toggleTheme(isDark) {
+    document.body.classList.toggle('dark-theme', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    this.updateThemeIcons(isDark);
+  },
+  
+  updateThemeIcons(isDark) {
+    this.themeIcons.forEach(icon => {
+      const isDarkIcon = icon.getAttribute('alt') === 'moon';
+      const newSrc = isDarkIcon
+        ? `./assets/images/icon-moon-${isDark ? 'light' : 'dark'}.svg`
+        : `./assets/images/icon-sun-${isDark ? 'light' : 'dark'}.svg`;
+      icon.src = newSrc;
+    });
+  }
+};
+
 // State management
 const QuizState = {
   data: [],
@@ -249,5 +287,8 @@ document.body.addEventListener('click', (e) => {
   }
 });
 
-// Initialize the quiz
-initializeQuiz();
+// Initialize theme manager and quiz
+document.addEventListener('DOMContentLoaded', () => {
+  ThemeManager.init();
+  initializeQuiz();
+});

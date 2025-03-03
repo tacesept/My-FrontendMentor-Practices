@@ -14,6 +14,12 @@
   --color-accessibility-bg: #f6e7ff;
   --color-answer-bg: #f4f6fa;
   
+  /* Dark Theme Colors */
+  --color-text-primary-dark: #fff;
+  --color-text-secondary-dark: #abc1e1;
+  --color-background-dark: #313e51;
+  --color-white-dark: #3b4d66;
+  
   /* Typography */
   --font-family-primary: "Rubik", sans-serif;
   --font-size-h1: clamp(2.5rem, 0.656rem + 7.869vw, 4rem);
@@ -139,6 +145,7 @@ p {
   display: flex;
   align-items: center;
   gap: 1rem;
+  color: var(--color-text-primary);
 }
 
 .header-right {
@@ -327,7 +334,7 @@ p {
 .purple-btn {
   font-size: var(--font-size-button);
   background-color: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-text-primary);
   padding-block: 1.25rem;
   border-radius: var(--border-radius-md);
   border: 1px solid transparent;
@@ -361,6 +368,12 @@ p {
 
 /* Media Queries */
 @media (min-width: 768px) {
+  body {
+    background: url("/assets/images/pattern-background-tablet-light.svg")
+      no-repeat center center fixed,
+    var(--color-background);
+  }
+
   .wrapper {
     padding-inline: var(--spacing-3xl);
   }
@@ -380,6 +393,11 @@ p {
 }
 
 @media (min-width: 1160px) {
+  body {
+    background: url("/assets/images/pattern-background-desktop-light.svg")
+      no-repeat center center fixed,
+    var(--color-background);
+  }
   .wrapper {
     padding-inline: 0;
   }
@@ -398,5 +416,32 @@ p {
   .main .second-section {
     width: 100%;
     max-width: 564px;
+  }
+}
+
+/* Dark Theme Styles */
+.dark-theme {
+  --color-text-primary: var(--color-text-primary-dark);
+  --color-text-secondary: var(--color-text-secondary-dark);
+  --color-background: var(--color-background-dark);
+  --color-white: var(--color-white-dark);
+  background: url("/assets/images/pattern-background-mobile-dark.svg")
+      no-repeat center center fixed,
+    var(--color-background) !important;
+}
+
+@media (min-width: 768px) {
+  .dark-theme {
+    background: url("/assets/images/pattern-background-tablet-dark.svg")
+      no-repeat center center fixed,
+    var(--color-background) !important;
+  }
+}
+
+@media (min-width: 1160px) {
+  .dark-theme {
+    background: url("/assets/images/pattern-background-desktop-dark.svg")
+      no-repeat center center fixed,
+    var(--color-background) !important;
   }
 }
