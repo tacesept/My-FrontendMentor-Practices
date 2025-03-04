@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Overpass', sans-serif;
+    font-size: 0.875rem;
+    background-color: #181E27;
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+    background-color: #232A34;
+    height: 100vh;
+    width: 80%;
+    max-width: 327px;
+    margin: 0 auto;
+}
+
+button {
+    cursor: pointer;
+}
+
+.rating-state {  
+    padding: 1.5rem;
+}
+
+.rating-state__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+    padding-block: 1rem 0.625rem;
+}
+
+.rating-state__description { 
+    font-weight: 400;
+    color: #969FAD;
+    line-height: 22px;
+}
+
+.rating-state__rating-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.17px;
+}
+
+.rating-state__rating-list button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background-color: #262E38;
+    color: #969FAD;
+}
+
+.rating-state__rating-list button:hover {
+    background-color: #fff;
+    color: #262E38;
+}
+
+.rating-state__submit-button {
+    width: 100%;
+    padding-block: 0.75rem;
+    border-radius: 22.5px; 
+    background-color: #FC7614;
+    color: #131518; 
+    font-weight: 700;
+    letter-spacing: 1.87px;
+    border: none;
+}
+
+.rating-state__submit-button:hover {
+    background-color: #fff; 
+}
+
+
