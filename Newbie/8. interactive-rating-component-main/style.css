@@ -1,84 +1,130 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Overpass', sans-serif;
-    font-size: 0.875rem;
-    background-color: #181E27;
+  font-family: "Overpass", sans-serif;
+  font-size: 0.875rem;
+  background-color: #181e27;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 main {
-    background-color: #232A34;
-    height: 100vh;
-    width: 80%;
-    max-width: 327px;
-    margin: 0 auto;
+  background-color: #232a34;
+  width: 80%;
+  max-width: 412px;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+
+main.hidden {
+  display: none;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.rating-state {  
-    padding: 1.5rem;
+.rating-state {
+  padding: 1.5rem;
 }
 
 .rating-state__title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: hsl(0, 0%, 100%);
-    padding-block: 1rem 0.625rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+  padding-block: 1rem 0.625rem;
 }
 
-.rating-state__description { 
-    font-weight: 400;
-    color: #969FAD;
-    line-height: 22px;
+.rating-state__description {
+  font-weight: 400;
+  color: #969fad;
+  line-height: 22px;
 }
 
 .rating-state__rating-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 0.17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.17px;  
+  flex-wrap: wrap;
 }
 
 .rating-state__rating-list button {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: none;
-    background-color: #262E38;
-    color: #969FAD;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background-color: #262e38;
+  color: #969fad;
+  
 }
 
-.rating-state__rating-list button:hover {
-    background-color: #fff;
-    color: #262E38;
+.rating-state__rating-list button:hover,
+.rating-state__rating-list button:focus {
+  background-color: #fc7614;
+  color: #262e38;
 }
 
 .rating-state__submit-button {
-    width: 100%;
-    padding-block: 0.75rem;
-    border-radius: 22.5px; 
-    background-color: #FC7614;
-    color: #131518; 
-    font-weight: 700;
-    letter-spacing: 1.87px;
-    border: none;
+  width: 100%;
+  padding-block: 0.75rem;
+  border-radius: 22.5px;
+  background-color: #fc7614;
+  color: #131518;
+  font-weight: 700;
+  letter-spacing: 1.87px;
+  border: none;
 }
 
 .rating-state__submit-button:hover {
-    background-color: #fff; 
+  background-color: #fff;
 }
 
+.rating-state__rating-list button.selected {
+  background-color: #fff;
+  color: #131518;
+}
 
+.thank-you-state {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.thank-you-state__rating-text {
+  color: #fc7614;
+  font-size: 0.875rem;
+  line-height: 22px;
+}
+
+.thank-you-state__content {
+  text-align: center;
+}
+
+.thank-you-state__content h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  padding-bottom: 0.8rem;
+}
+
+.thank-you-state__content p {
+  font-size: 0.9375rem;
+  line-height: 22px;
+  color: #969fad;
+}
+ 

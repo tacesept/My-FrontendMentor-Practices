@@ -32,7 +32,7 @@
     </style>
   </head>
   <body>
-    <!-- Rating state start --> 
+    <!-- Rating state start -->
     <main class="rating-state">
       <img src="/images/icon-star.svg" alt="star" />
       <h1 class="rating-state__title">How did we do?</h1>
@@ -48,26 +48,32 @@
         <li><button>5</button></li>
       </ul>
       <button class="rating-state__submit-button">Submit</button>
-    </main>      
+    </main>
     <!-- Rating state end -->
 
     <!-- Thank you state start -->
-    <main class="thank-you-state">
+    <main class="thank-you-state hidden">
       <img src="/images/illustration-thank-you.svg" alt="thank you" />
-      <p>You selected <span>5</span> out of 5</p>
-      <h1>Thank you!</h1>
-      <p>
-        We appreciate you taking the time to give a rating. If you ever need
-        more support, don’t hesitate to get in touch!
+      <p class="thank-you-state__rating-text">
+        You selected <span class="thank-you-state__rating">5</span> out of 5
       </p>
-    </main>    
+      <div class="thank-you-state__content">
+        <h1>Thank you!</h1>
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
+      </div>
+    </main>
     <!-- Thank you state end -->
 
-    <div class="attribution">
+    <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    </div> -->
+
+    <script src="script.js"></script>
   </body>
 </html>
