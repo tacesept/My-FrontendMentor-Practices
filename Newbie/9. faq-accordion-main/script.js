@@ -1,13 +1,22 @@
-const accordionBtns = document.querySelectorAll(".accordion-item-btn");
-const accordionBodies = document.querySelectorAll(".accordion-item-body");
+// Get all accordion buttons
+const accordionButtons = document.querySelectorAll(".accordion-item-btn");
 
-accordionBtns.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    let img = this.querySelector(".accordion-item-btn-img");
-    img.src =
-      img.src.includes("icon-plus.svg")
-        ? "/assets/images/icon-minus.svg"
-        : "/assets/images/icon-plus.svg";
+// Add click event listener to each button
+accordionButtons.forEach((button) => {
+  button.addEventListener("click", () => { 
+    const accordionItem = button.closest(".accordion-item"); 
+    const accordionBody = accordionItem.querySelector(".accordion-item-body"); 
+    const buttonImg = button.querySelector(".accordion-item-btn-img");
+
+    // Toggle the active state
+    const isExpanded = accordionBody.style.display === "block";
+
+    // Change image source based on state
+    buttonImg.src = isExpanded
+      ? "/assets/images/icon-plus.svg"
+      : "/assets/images/icon-minus.svg";
+
+    // Toggle body display
+    accordionBody.style.display = isExpanded ? "none" : "block";
   });
 });
-

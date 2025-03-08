@@ -44,7 +44,22 @@ body {
   --wrapper-padding-inline: 1.5rem;
 
   font-family: "Work Sans", sans-serif;
-  color: #301534; 
+  color: #301534;
+  background: 
+    linear-gradient(
+      to bottom,
+      transparent 30%,
+      #F8EEFF 30%
+    ),
+    url('/assets/images/background-pattern-mobile.svg') center top / 100% auto no-repeat;
+  height: 100vh; /* Ensure it covers the full viewport */
+  margin: 0;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .wrapper {
@@ -52,13 +67,15 @@ body {
   margin: 0 auto;
   padding-inline: var(--wrapper-padding-inline);
   background-color: #fff;
+  border-radius: 0.5rem;
+  margin-block: 10rem;
 }
 
 .header {
   --header-img-size: 21px;
 
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 1.5rem;
   padding-block: 1.5rem;
 }
@@ -75,6 +92,8 @@ body {
 
 .main {
   --accordion-item-body-padding-block: 1.5rem 1.25rem;
+
+  padding-bottom: 1.5rem;
 }
 
 .accordion {
@@ -87,27 +106,40 @@ body {
   border-bottom: 1px solid #e0e0e0;
 }
 
-.accordion-item-header {
-  display: flex; 
+.accordion-item-btn {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  font-size: clamp(1rem, 0.792rem + 0.889vw, 1.125rem);
+  font-weight: 600;
+  text-align: left;
+  width: 100%;
 }
 
-.accordion-item-body {   
+.accordion-item-btn:hover {
+  color: #AD28EB;
+}
+
+.accordion-item-body {
   padding-block: var(--accordion-item-body-padding-block);
   display: none;
-}
-
-.accordion-item-btn { 
-  cursor: pointer; 
-}
-
-
+  font-size: clamp(0.875rem, 0.667rem + 0.889vw, 1rem);
+  line-height: 1.5;
+  color: #8B6990;
+} 
 
 @media (min-width: 600px) {
   body {
     --wrapper-padding-inline: 2.5rem;
+
+    background: 
+    linear-gradient(
+      to bottom,
+      transparent 30%,
+      #F8EEFF 30%
+    ),
+    url('/assets/images/background-pattern-desktop.svg') center top / 100% auto no-repeat;
   }
   .header {
     --header-img-size: 41px;
