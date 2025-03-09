@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body>
+    <main>
+      <h1>Contact Us</h1>
+      <form>
+        <div>
+          <div class="name">
+            <label for="firstName">
+              <span>First Name</span>
+              <input type="text" name="firstName" id="firstName" />
+            </label>
+            <label for="lastName">
+              <span>Last Name</span>
+              <input type="text" name="lastName" id="lastName" />
+            </label>
+          </div>
+
+          <label for="email">
+            <span>Email Address</span>
+            <input type="email" name="email" id="email" />
+          </label>
+
+          <fieldset class="query">
+            <legend>Query Type</legend>
+            <label for="general">
+              <input type="radio" name="query" id="general" />
+              <span>General Enquiry</span>
+            </label>
+            <label for="support">
+              <input type="radio" name="query" id="support" />
+              <span>Support Request</span>
+            </label>
+          </fieldset>
+
+          <label for="message">
+            <span>Message</span>
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </label>
+        </div>
+
+        <label for="consent">
+          <input type="checkbox" name="consent" id="consent" />
+          <span>I consent to being contacted by the team</span>
+        </label>
+
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
