@@ -18,50 +18,80 @@
     <main>
       <h1>Contact Us</h1>
       <form>
-        <div>
-          <div class="name">
+        <div class="container">
+          <div class="name-container">
             <label for="firstName">
-              <span>First Name</span>
-              <input type="text" name="firstName" id="firstName" />
+              <span>First Name <span class="required">*</span></span>
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                autocomplete="given-name"
+              />
+              <span class="error-message">This field is required</span>
             </label>
             <label for="lastName">
-              <span>Last Name</span>
-              <input type="text" name="lastName" id="lastName" />
+              <span>Last Name <span class="required">*</span></span>
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                autocomplete="family-name"
+              />
+              <span class="error-message">This field is required</span>
             </label>
           </div>
 
           <label for="email">
-            <span>Email Address</span>
-            <input type="email" name="email" id="email" />
+            <span>Email Address <span class="required">*</span></span>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              autocomplete="email"
+              aria-invalid="false"
+            />
+            <span class="error-message"
+              >Please enter a valid email address</span
+            >
           </label>
 
           <fieldset class="query">
-            <legend>Query Type</legend>
-            <label for="general">
-              <input type="radio" name="query" id="general" />
-              <span>General Enquiry</span>
-            </label>
-            <label for="support">
-              <input type="radio" name="query" id="support" />
-              <span>Support Request</span>
-            </label>
+            <legend>Query Type <span class="required">*</span></legend>
+            <div class="radio-container">
+              <label for="general" class="radio-label">
+                <input type="radio" name="query" id="general" />
+                <span>General Enquiry</span>
+              </label>
+              <label for="support" class="radio-label">
+                <input type="radio" name="query" id="support" />
+                <span>Support Request</span>
+              </label>
+            </div>
+            <span class="error-message">Please select a query type</span>
           </fieldset>
 
           <label for="message">
-            <span>Message</span>
+            <span>Message <span class="required">*</span></span>
             <textarea
               name="message"
               id="message"
               cols="30"
               rows="10"
             ></textarea>
+            <span class="error-message">This field is required</span>
           </label>
         </div>
 
-        <label for="consent">
-          <input type="checkbox" name="consent" id="consent" />
-          <span>I consent to being contacted by the team</span>
-        </label>
+        <div class="consent-container">
+          <label for="consent" class="checkbox-label">
+            <input type="checkbox" name="consent" id="consent" />
+            <span>I consent to being contacted by the team</span>
+          </label>
+          <span class="error-message">
+            To submit this form, please consent to being contacted
+          </span>
+        </div>
 
         <button type="submit">Submit</button>
       </form>
