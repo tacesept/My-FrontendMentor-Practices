@@ -22,7 +22,16 @@ fieldset {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.5rem; 
+}
+
+ul {
+  list-style: none;
+  
+}
+
+li {
+  width: 100%;
 }
 
 main {
@@ -72,8 +81,32 @@ input:not([type="radio"], [type="checkbox"]) {
   border-radius: 0.5rem;
 }
 
+label:focus-within input,
+label:focus-within textarea {
+  outline: 1px solid #0c7d69;
+}
+
+.radio-label:focus-within {
+  outline: 1px solid #0c7d69;
+  background-color: #E0F1E8;
+}
+
+.checkbox-label:focus-within .checkbox-label-svg-container {
+  outline: 1px solid #0c7d69; 
+}
+
+
+
+input[type="radio"],
+input[type="checkbox"] { 
+  appearance: none; 
+  position: absolute;
+  opacity: 0;
+} 
+
 .radio-label {
   display: flex;
+  align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1.5rem;
   border: 1px solid #86a2a5;
@@ -85,10 +118,38 @@ input:not([type="radio"], [type="checkbox"]) {
 
 .checkbox-label {
   display: flex;
+  align-items: center;
   gap: 1rem;
   font-size: 1rem;
   line-height: 1.5;
+} 
+
+.radio-label-svg-container {
+  width: 20px;
+  height: 21px;
+  border-radius: 50%;
+  border: 1px solid #86a2a5;
+  display: grid;
+  place-content: center;
 }
+
+.checkbox-label-svg-container {
+  width: fit-content; 
+  height: fit-content;
+  border: 1px solid #86a2a5;
+  display: grid;
+  place-content: center;
+}
+
+.radio-label svg,
+.checkbox-label svg {
+  visibility: hidden;
+}
+
+.radio-label:has(input:checked) svg,
+.checkbox-label:has(input:checked) svg {
+  visibility: visible;
+} 
 
 .consent-container {
   display: flex;
@@ -98,6 +159,15 @@ input:not([type="radio"], [type="checkbox"]) {
 
 legend {
   padding-bottom: 0.5rem;
+}
+
+textarea {
+  resize: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #86a2a5;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 textarea,
