@@ -214,6 +214,41 @@ button:hover {
   display: none;
 }
 
+.requiredInput.not-validated {
+  border: 1px solid #D73C3C;
+}
+
+.success-message { 
+  width: 90%;
+  max-width: 500px;
+  background-color: #2A4144;
+  color: #E0F1E8;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;  
+  visibility: hidden;
+}
+
+.success-message,
+.success-message-header{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; 
+}
+
+.success-message-header {
+  flex-direction: row;
+  color: #fff;
+}
+
+.success-message.active-success-message {
+  visibility: visible;
+}
+
 @media (min-width: 690px) {
   main {
     --main-padding: 2.5rem;
