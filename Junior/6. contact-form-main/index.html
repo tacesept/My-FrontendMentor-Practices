@@ -27,8 +27,11 @@
                 name="firstName"
                 id="firstName"
                 autocomplete="given-name"
+                aria-describedby="firstNameError"
+                class="requiredInput"
+                required
               />
-              <span class="error-message">This field is required</span>
+              <span class="error-message" id="firstNameError">This field is required</span>
             </label>
             <label for="lastName">
               <span>Last Name <span class="required">*</span></span>
@@ -37,8 +40,11 @@
                 name="lastName"
                 id="lastName"
                 autocomplete="family-name"
+                aria-describedby="lastNameError"
+                class="requiredInput"
+                required
               />
-              <span class="error-message">This field is required</span>
+              <span class="error-message" id="lastNameError">This field is required</span>
             </label>
           </div>
 
@@ -49,9 +55,12 @@
               name="email"
               id="email"
               autocomplete="email"
-              aria-invalid="false"
+              aria-invalid="false"  
+              aria-describedby="emailError"
+              class="requiredInput"
+              required
             />
-            <span class="error-message"
+            <span class="error-message" id="emailError"
               >Please enter a valid email address</span
             >
           </label>
@@ -61,7 +70,7 @@
             <ul class="radio-container">
               <li>
                 <label for="general" class="radio-label">
-                  <input type="radio" name="query" id="general" />
+                  <input type="radio" name="query" id="general" aria-describedby="queryError" class="requiredInput" required/>
                   <div class="radio-label-svg-container">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" fill="none" viewBox="0 0 20 21"><path fill="#0C7D69" d="M10 .75a9.75 9.75 0 1 0 9.75 9.75A9.76 9.76 0 0 0 10 .75Zm0 18a8.25 8.25 0 1 1 8.25-8.25A8.26 8.26 0 0 1 10 18.75Zm5.25-8.25a5.25 5.25 0 1 1-10.499 0 5.25 5.25 0 0 1 10.499 0Z"/></svg>
                   </div>
@@ -70,7 +79,7 @@
               </li>
               <li>
                 <label for="support" class="radio-label">
-                  <input type="radio" name="query" id="support" />
+                  <input type="radio" name="query" id="support" aria-describedby="queryError" class="requiredInput" required/>
                   <div class="radio-label-svg-container">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" fill="none" viewBox="0 0 20 21"><path fill="#0C7D69" d="M10 .75a9.75 9.75 0 1 0 9.75 9.75A9.76 9.76 0 0 0 10 .75Zm0 18a8.25 8.25 0 1 1 8.25-8.25A8.26 8.26 0 0 1 10 18.75Zm5.25-8.25a5.25 5.25 0 1 1-10.499 0 5.25 5.25 0 0 1 10.499 0Z"/></svg>
                   </div>
@@ -78,7 +87,7 @@
                 </label>
               </li>
             </ul>
-            <span class="error-message">Please select a query type</span>
+            <span class="error-message" id="queryError">Please select a query type</span>
           </fieldset>
 
           <label for="message">
@@ -89,20 +98,23 @@
               cols="30"
               rows="10"
               placeholder="Type your message here..."
+              aria-describedby="messageError"
+              class="requiredInput"
+              required
             ></textarea>
-            <span class="error-message">This field is required</span>
+            <span class="error-message" id="messageError">This field is required</span>
           </label>
         </div>
 
         <div class="consent-container">
           <label for="consent" class="checkbox-label">
-            <input type="checkbox" name="consent" id="consent" />
+            <input type="checkbox" name="consent" id="consent" aria-describedby="consentError" class="requiredInput" required/>
             <div class="checkbox-label-svg-container">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 18 18"><path fill="#0C7D69" d="M16.5 0h-15A1.5 1.5 0 0 0 0 1.5v15A1.5 1.5 0 0 0 1.5 18h15a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 16.5 0Zm-3.22 7.28-5.25 5.25a.748.748 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 1.06-1.06l1.72 1.72 4.72-4.72a.751.751 0 0 1 1.06 1.06Z"/></svg>
             </div>
             <span>I consent to being contacted by the team</span>
           </label>
-          <span class="error-message">
+          <span class="error-message" id="consentError">
             To submit this form, please consent to being contacted
           </span>
         </div>
