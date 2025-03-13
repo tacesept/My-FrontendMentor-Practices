@@ -123,12 +123,7 @@ function loadStartScreen() {
 }
 
 function loadQuizScreen(index) {
-  const currentQuizData = QuizState.data[index];
-  if (!currentQuizData?.questions) {
-    renderError('Invalid quiz data');
-    return;
-  }
-
+  const currentQuizData = QuizState.data[index];  
   const { questions } = currentQuizData;
   const currentQuestion = questions[QuizState.currentQuestionIndex];
   
@@ -236,8 +231,8 @@ function checkAnswer(selectedIndex) {
 
 // Event handlers
 function handleSubjectSelection(button) {
-  QuizState.currentSubjectIndex = parseInt(button.dataset.index);
-  QuizState.reset();
+  QuizState.currentSubjectIndex = parseInt(button.dataset.index);  
+   
   loadQuizScreen(QuizState.currentSubjectIndex);
   updateHeaderSubject();
 }
