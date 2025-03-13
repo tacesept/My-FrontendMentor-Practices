@@ -10,7 +10,34 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <nav class="nav-container">
+    <a href="#" class="logo">
+      <img src="./assets/images/logo.svg" alt="go to home page">
+    </a>
+    <button class="menu-button" aria-controls="nav-links-mobile" aria-expanded="false">
+      <img src="./assets/images/icon-menu.svg" alt="menu">
+    </button>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">New</a></li>
+      <li><a href="#">Popular</a></li>
+      <li><a href="#">Trending</a></li>
+      <li><a href="#">Categories</a></li>
+    </ul>
+    <div class="nav-links-mobile active" id="nav-links-mobile">
+      <button class="close-button">
+        <img src="./assets/images/icon-menu-close.svg" alt="close">
+      </button>
+      <ul class="nav-links-mobile-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">New</a></li>
+        <li><a href="#">Popular</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">Categories</a></li>
+      </ul>
+    </div>
+  </nav>
+<!-- 
   Home
   New
   Popular
@@ -47,7 +74,7 @@
   The Growth of Gaming
   How the pandemic has sparked fresh opportunities.
   
-  
+   -->
   <script src="script.js"></script>
 </body>
 </html>
