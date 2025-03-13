@@ -1,3 +1,6 @@
+const menuButton = document.querySelector('.menu-button');
+const navLinksMobile = document.querySelector('.nav-links-mobile');
+
 window.addEventListener('resize', addActiveClass);
 
 function addActiveClass() {
@@ -14,3 +17,7 @@ function addActiveClass() {
 }
 
 addActiveClass();
+
+menuButton.addEventListener('click', () => {
+  navLinksMobile.classList.toggle('active');
+});

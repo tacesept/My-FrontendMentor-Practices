@@ -71,6 +71,7 @@ a:hover {
 .menu-button {
   display: none;
   cursor: pointer;
+  z-index: 100;
 }
 
 .menu-button.active {
@@ -80,14 +81,19 @@ a:hover {
 .nav-links-mobile {
   position: fixed;
   top: 0;
-  left: 30%;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: gray;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.422) 30%, #fffdfa 30%);
   color: #00001a;
   transform: translateX(100%);
-  transition: transform 0.3s ease-in-out; 
-} 
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 9rem;
+  padding-left: 40%;
+}
 
 .nav-links-mobile.active {
   transform: translateX(0);
