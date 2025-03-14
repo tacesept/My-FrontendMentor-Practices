@@ -88,8 +88,8 @@ const closeMobileMenu = () => {
 window.addEventListener('resize', handleResize);
 
 elements.menuButton.addEventListener('click', () => {
-  const isExpanded = elements.menuButton.getAttribute('aria-expanded') === 'true';
-  toggleMobileMenu(!isExpanded);
+  const currentState = elements.menuButton.getAttribute('aria-expanded') === 'true';
+  toggleMobileMenu(!currentState);
 });
 
 elements.background.addEventListener('click', closeMobileMenu);
