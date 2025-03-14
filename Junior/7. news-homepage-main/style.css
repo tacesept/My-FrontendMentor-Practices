@@ -13,7 +13,11 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", sans-serif; 
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 ul {
@@ -107,7 +111,7 @@ a:hover {
 }
 
 .nav-links-mobile.active { 
-  transform: translateX(0%);
+  transform: translateX(0%); 
 }
 
 .background.active { 
