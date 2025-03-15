@@ -141,6 +141,8 @@ img {
   --hero-section-article-gap: 0rem;
   --hero-section-article-content-p-pd-block: 1.25rem;
   --hero-section-article-h1-fs-n-lh: 40px;
+
+  --new-section-h2-fs-n-lh: 2.5rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
@@ -202,6 +204,44 @@ img {
   background-color: #00001a;
 }
  
+/* new section */
+.new-section {
+  background-color: #00001a;
+  color: #C5C6CE;
+  padding-inline: 1.5rem;
+}
+
+.new-section h2 {
+  color: #E9AA52;
+  padding-top: 2rem;
+  font-size: var(--new-section-h2-fs-n-lh);
+  line-height: var(--new-section-h2-fs-n-lh);
+}
+
+.new-section-article h3{
+  color: #FFFDFA;
+  font-size: 1.25rem;
+  line-height: 24px;
+}
+
+.new-section-article p { 
+  font-size: 1rem;
+  line-height: 26px;
+}
+
+.new-section-article:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #5E607A;
+  margin-top: 2rem;
+}
+
+.new-section-article  {
+  padding-top: 2rem;
+} 
+
 
 @media (min-width: 600px) {
   nav {
@@ -220,6 +260,7 @@ img {
     --hero-section-article-h1-fs-n-lh: 56px;
     --hero-section-article-content-p-pd-block: 0 1.875rem;
 
+    --new-section-h2-fs-n-lh: 2rem;
 
     grid-template-columns: 1fr 1fr 350px;
     grid-template-rows: auto auto;
