@@ -14,6 +14,7 @@
 
 body {
   font-family: "Inter", sans-serif; 
+  color: #00001a;
 }
 
 body.no-scroll {
@@ -39,10 +40,18 @@ a:hover {
   color: #f15d51;
 } 
 
-.nav-container {
+img {
+  display: block;
+  width: 100%;
+}
+
+.wrapper {
   width: 90%;
   margin-inline: auto;
   max-width: 1110px;
+}
+
+.nav-container { 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,6 +132,70 @@ a:hover {
   background-color: #00001a88;
   z-index: 50;
 }
+
+/* main section */
+
+.main {
+  --main-gap: 4rem;
+  --hero-section-gap: 4rem;
+  --hero-section-article-gap: 1.5rem;
+  --hero-section-article-content-gap: 1.25rem;
+  --hero-section-article-content-h1-lh: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--main-gap); 
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-section-gap);
+}
+
+.hero-section-article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-section-article-gap);
+  max-width: 730px;
+  width: 100%;
+}
+
+.hero-section-article-content,
+.hero-section-article-content-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-section-article-content-gap);
+}
+
+.hero-section-article-content h1 {
+  font-size: 40px;
+  line-height: var(--hero-section-article-content-h1-lh);
+  font-weight: 800; 
+}
+
+.hero-section-article-content-text p {
+  font-size: 1rem;
+  line-height: 26px;
+  font-weight: 400;
+  color: #5E607A;
+}
+
+.hero-section-article-content-text a {
+  font-size: 1rem;
+  line-height: 26px;
+  font-weight: 400;
+  color: #00001A;
+  background-color: #F15D51;
+  padding-block: 0.75rem;
+  text-align: center;
+  max-width: 185px;
+}
+
+.hero-section-article-content-text a:hover {
+  background-color: #00001A;
+  color: #FFFDFA;
+}
  
 
 @media (min-width: 600px) {
@@ -130,5 +203,24 @@ a:hover {
     --nav-padding-block: 5rem 3rem;
     --nav-logo-width: 64px;
     --nav-logo-height: 40px;
+  }
+}
+
+@media (min-width: 1110px) {
+  .main {
+    --main-gap: 4.5rem;
+    --hero-section-gap: 1.875rem;
+    --hero-section-article-gap: 1.875rem;
+    --hero-section-article-content-gap: 1.875rem;
+    --hero-section-article-content-h1-lh: 3.5rem;
+  }
+
+  .hero-section {
+    flex-direction: row;
+    justify-content: space-between; 
+  }
+
+  .hero-section-article-content {
+    flex-direction: row;
   }
 }
