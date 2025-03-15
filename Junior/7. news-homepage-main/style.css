@@ -208,12 +208,11 @@ img {
 .new-section {
   background-color: #00001a;
   color: #C5C6CE;
-  padding-inline: 1.5rem;
+  padding: 1.5rem 2rem;
 }
 
 .new-section h2 {
-  color: #E9AA52;
-  padding-top: 2rem;
+  color: #E9AA52; 
   font-size: var(--new-section-h2-fs-n-lh);
   line-height: var(--new-section-h2-fs-n-lh);
 }
@@ -224,9 +223,14 @@ img {
   line-height: 24px;
 }
 
+.new-section-article h3 a:hover {
+  color: #E9AA52;
+}
+
 .new-section-article p { 
   font-size: 1rem;
   line-height: 26px;
+  padding-top: 0.5rem;
 }
 
 .new-section-article:not(:last-child)::after {
