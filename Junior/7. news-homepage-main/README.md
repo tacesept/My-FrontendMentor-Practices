@@ -1,7 +1,7 @@
 # News Homepage
 
 ## Live Site
-[View Live Site]()
+[View Live Site](https://cosmic-scone-13762c.netlify.app/)
 
 ## Preview
 ![Desktop Preview](./design/desktop-preview.jpg)
