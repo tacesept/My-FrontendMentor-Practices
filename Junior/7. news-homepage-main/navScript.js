@@ -79,6 +79,8 @@ const closeMobileMenu = () => {
   navLinksMobile.classList.remove("active");
 
   menuButtonIcon.src = IMAGE_PATHS.menu;
+
+  document.body.classList.remove("no-scroll");
 };
 
 // Event Listeners
