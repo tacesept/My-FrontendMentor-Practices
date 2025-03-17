@@ -1,0 +1,26 @@
+.header {
+    --header-right-gap: 1.5rem; 
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: var(--header-right-gap); 
+    }
+    
+} 
+
+@media (min-width: 600px) {
+    .header {
+        --header-right-gap: 3rem;
+    } 
+}
