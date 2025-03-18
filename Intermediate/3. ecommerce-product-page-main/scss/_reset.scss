@@ -21,4 +21,10 @@ ul {
 
 a {
     text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: #ff7e1b;
+    }
 }
+
