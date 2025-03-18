@@ -1,14 +1,34 @@
 .header {
-    --header-right-gap: 1.5rem; 
+    --header-padding-block: 1.25rem 1.5rem;
+    --header-right-gap: 1.5rem;
+    --header-right-avatar-size: 1.5rem;
+    --header-left-gap: 1rem;
+    --header-menu-links-width: 15.625rem;
+    --header-menu-links-pd-top: 4.5625rem;
 
+    width: 80%;
+    max-width: 1110px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center; 
+    padding-block: var(--header-padding-block);
 
     &__left {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: var(--header-left-gap);
+    }
+
+    &__left-menu {
+        display: block;
+        z-index: 100;
+    }
+
+    &__left-links {
+        display: none;
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
 
     &__right {
@@ -16,11 +36,84 @@
         align-items: center;
         gap: var(--header-right-gap); 
     }
+
+    &__right-avatar {
+        width: var(--header-right-avatar-size);
+        height: var(--header-right-avatar-size);
+        border-radius: 50%; 
+    }
+
+    &__menu-links {
+        position: fixed;    
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: var(--header-menu-links-width);
+        height: 100%;
+        padding-left: 10%;
+        padding-top: var(--header-menu-links-pd-top);
+        background-color: #fff;
+        display: none;
+        flex-direction: column; 
+        gap: 1.5rem; 
+        z-index: 50;
+
+        &.active {
+            display: flex;
+        }
+    }
     
 } 
 
 @media (min-width: 600px) {
     .header {
+        --header-padding-block: 1.75rem 2rem;
         --header-right-gap: 3rem;
+        --header-right-avatar-size: 3.125rem;
+        --header-menu-links-width: 18.75rem;
+        --header-menu-links-pd-top: 7.3125rem;
+
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #E4E9F2;
+        }
     } 
+    
+}
+
+@media (min-width: 1024px) {
+    .header {
+        --header-left-gap: 3.5rem;
+
+        &__left-menu {
+            display: none;
+        }
+
+        &__left-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem; 
+        }
+
+        &__focus-line:hover,
+        &__focus-line:focus {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -48px;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background-color: #FF7E1B; 
+            }
+        }
+    }
 }
