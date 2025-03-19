@@ -1,26 +1,39 @@
-const menuButton = document.querySelector('.header__left-menu');
-const menuLinks = document.querySelector('.header__menu-links');
-const background = document.querySelector('.background');
-const menuImg = document.querySelector('.header__left-menu img');
-const cartButton = document.querySelector('.header__right-cart');
-const cart = document.querySelector('.cart');  
+// DOM Elements
+const menuElements = {
+  button: document.querySelector(".header__left-menu"),
+  sidebar: document.querySelector(".sidebar-menu"),
+  icon: document.querySelector(".header__left-menu img"),
+};
 
-/* event listeners */
-menuButton.addEventListener('click', () => {
-    menuImg.src = menuImg.src.includes("icon-menu")
-      ? "./images/icon-close.svg"
-      : "./images/icon-menu.svg"; 
-    menuLinks.classList.toggle('active');
-    background.classList.toggle('active');
-    cart.classList.remove('active'); 
-});
+const cartElements = {
+  button: document.querySelector(".header__right-cart"),
+  container: document.querySelector(".cart"),
+};
 
-background.addEventListener('click', () => {
-    menuLinks.classList.remove('active');
-    background.classList.remove('active');
-    menuImg.src = "./images/icon-menu.svg"; 
-});
+const background = document.querySelector(".background");
 
-cartButton.addEventListener('click', () => {
-    cart.classList.toggle('active'); 
-});
+// Helper Functions
+const toggleMenu = () => {
+  const isMenuOpen = menuElements.icon.src.includes("icon-menu");
+  menuElements.icon.src = isMenuOpen
+    ? "./images/icon-close.svg"
+    : "./images/icon-menu.svg";
+  menuElements.sidebar.classList.toggle("active");
+  background.classList.toggle("active");
+  cartElements.container.classList.remove("active");
+};
+
+const closeMenu = () => {
+  menuElements.sidebar.classList.remove("active");
+  background.classList.remove("active");
+  menuElements.icon.src = "./images/icon-menu.svg";
+};
+
+const toggleCart = () => {
+  cartElements.container.classList.toggle("active");
+};
+
+// Event Listeners
+menuElements.button.addEventListener("click", toggleMenu);
+background.addEventListener("click", closeMenu);
+cartElements.button.addEventListener("click", toggleCart);

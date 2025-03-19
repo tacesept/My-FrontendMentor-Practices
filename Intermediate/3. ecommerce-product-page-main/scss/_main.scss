@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.product-images {
+  &__list {
+    display: flex;  
+  }
+
+  &__list-item { 
+    visibility: hidden;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+

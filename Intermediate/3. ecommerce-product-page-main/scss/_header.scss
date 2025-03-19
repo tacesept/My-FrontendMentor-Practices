@@ -30,6 +30,8 @@
     display: none;
     font-size: 1rem;
     line-height: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   &__right {
@@ -73,30 +75,6 @@
   &__right-avatar:focus {
     outline: 2px solid #ff7e1b;
   }
-
-  &__menu-links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    width: 100%;
-    max-width: var(--header-menu-links-width);
-    height: 100%;
-    padding-left: 10%;
-    padding-top: var(--header-menu-links-pd-top);
-    background-color: #fff;
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    z-index: 50;
-    transition: all 0.3s ease-in-out;
-
-    &.active {
-      visibility: visible;
-      transform: translateX(0);
-    }
-  }
 }
 
 @media (min-width: 600px) {
@@ -104,8 +82,6 @@
     --header-padding-block: 1.75rem 2rem;
     --header-right-gap: 3rem;
     --header-right-avatar-size: 3.125rem;
-    --header-menu-links-width: 18.75rem;
-    --header-menu-links-pd-top: 7.3125rem;
 
     position: relative;
 

@@ -11,6 +11,12 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <title>Frontend Mentor | E-commerce product page</title>
@@ -41,18 +47,18 @@
         </button>
       </div>
       <!-- menu links to be displayed on mobile -->
-      <ul class="header__menu-links" aria-hidden="true">
+      <ul class="sidebar-menu" aria-hidden="true">
         <li><a href="#">Collections</a></li>
         <li><a href="#">Men</a></li>
         <li><a href="#">Women</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
-      <!-- end of menu links --> 
+      <!-- end of menu links -->
       <!-- cart -->
       <div class="cart" aria-hidden="true">
         <h2 class="cart__title">Cart</h2>
-        <hr class="cart__line">
+        <hr class="cart__line" />
         <div class="cart__body">
           <p>Your cart is empty.</p>
         </div>
@@ -60,7 +66,23 @@
       <!-- end of cart -->
     </header>
 
-    <main></main>
+    <main class="main">
+      <section class="product-images">
+        <ul class="product-images__list">
+          <li class="product-images__list-item active"><img src="./images/image-product-1.jpg" alt="product" /></li>
+          <li class="product-images__list-item"><img src="./images/image-product-2.jpg" alt="product" /></li>
+          <li class="product-images__list-item"><img src="./images/image-product-3.jpg" alt="product" /></li>
+          <li class="product-images__list-item"><img src="./images/image-product-4.jpg" alt="product" /></li>
+        </ul>
+        <div class="product-images__controls">
+          <button><img src="./images/icon-previous.svg" alt="previous" /></button>
+          <button><img src="./images/icon-next.svg" alt="next" /></button>
+        </div>
+      </section>
+      <section class="product-details">
+         
+      </section>
+    </main>
 
     <footer></footer>
 
