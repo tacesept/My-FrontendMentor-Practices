@@ -158,25 +158,30 @@ body {
   }
 }
 .main {
-  --margin-top: 0;
+  --main-flex-direction: column;
+  --padding-top: 0;
   --border-radius: 0;
   --img-height: 300px;
   --controls-padding-inline: 1rem;
   --section-gap: 1.5rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: var(--main-flex-direction);
   gap: var(--section-gap);
   width: 100%;
   max-width: 1110px;
   margin: 0 auto;
+  padding-top: var(--padding-top);
 }
 
 .product-images {
+  --button-display: flex;
   width: 100%;
   position: relative;
   overflow: hidden;
-  margin-top: var(--margin-top);
+}
+.product-images__container {
   border-radius: var(--border-radius);
+  overflow: hidden;
 }
 .product-images__list {
   width: 100%;
@@ -196,10 +201,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
+  display: var(--button-display);
   justify-content: space-between;
   width: 90%;
-  padding-top: var(--padding-top);
   padding-inline: var(--controls-padding-inline);
 }
 .product-images__controls-button {
@@ -312,12 +316,15 @@ body {
 .product-details__cart-button svg path {
   fill: #1D2026;
 }
+.product-details__cart-button:hover {
+  background-color: #FFAB6A;
+}
 
 @media (min-width: 600px) {
   .main {
-    --margin-top: 3rem;
+    --padding-top: 3rem;
     --border-radius: 1rem;
-    --img-height: 290px;
+    --img-height: 400px;
     --controls-padding-inline: 0;
     --section-gap: 3rem;
     width: 90%;
@@ -332,6 +339,30 @@ body {
     --price-flex-direction: column;
     --cart-flex-direction: row;
     --cart-gap: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .main {
+    --main-flex-direction: row;
+    --padding-top: 6rem;
+    --img-height: unset;
+    --section-gap: 8rem;
+    max-width: 1110px;
+    align-items: center;
+  }
+  .product-images {
+    --button-display: none;
+    max-width: 450px;
+  }
+  .product-images__thumbnails {
+    display: flex;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  .product-images__thumbnails-item {
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
   }
 }
 .sidebar-menu {
