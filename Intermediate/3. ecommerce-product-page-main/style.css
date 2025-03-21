@@ -370,6 +370,7 @@ body {
     --padding-top: 6rem;
     --img-height: unset;
     --section-gap: 8rem;
+    margin-bottom: 8rem;
     max-width: 1110px;
     align-items: center;
   }
