@@ -1,0 +1,39 @@
+@use "utilities" as u;
+
+.hero {
+  --flex-direction: column;
+  --gap: 2rem;
+  --padding-block: 2rem 4rem;
+
+  --content-gap: 1.5rem;
+
+  display: flex;
+  flex-direction: var(--flex-direction);
+  gap: var(--gap);
+  padding-block: var(--padding-block);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--content-gap);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @include u.breakpoint(medium) {
+    --gap: 2.5rem;
+    --padding-block: 2.5rem 5.5rem;
+  }
+
+  @include u.breakpoint(large) {
+    --flex-direction: row;
+    --gap: 2rem;
+    --padding-block: 1.5rem 5rem;
+
+    --content-gap: 2rem;
+  }
+}

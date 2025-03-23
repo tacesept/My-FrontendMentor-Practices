@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: none;
+  font: inherit;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+.header {
+  --justify-content: center;
+  --logo-width: 40px;
+  display: flex;
+  justify-content: var(--justify-content);
+  align-items: center;
+}
+.header__logo {
+  display: block;
+  width: var(--logo-width);
+}
+@media (width >= 72.5em) {
+  .header {
+    --justify-content: flex-start;
+    --logo-width: 64px;
+  }
+}
+
+.hero {
+  --flex-direction: column;
+  --gap: 2rem;
+  --padding-block: 2rem 4rem;
+  --content-gap: 1.5rem;
+  display: flex;
+  flex-direction: var(--flex-direction);
+  gap: var(--gap);
+  padding-block: var(--padding-block);
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-gap);
+}
+.hero__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media (width >= 43.75em) {
+  .hero {
+    --gap: 2.5rem;
+    --padding-block: 2.5rem 5.5rem;
+  }
+}
+@media (width >= 72.5em) {
+  .hero {
+    --flex-direction: row;
+    --gap: 2rem;
+    --padding-block: 1.5rem 5rem;
+    --content-gap: 2rem;
+  }
+}/*# sourceMappingURL=style.css.map */

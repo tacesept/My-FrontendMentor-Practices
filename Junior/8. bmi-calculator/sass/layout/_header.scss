@@ -1,0 +1,22 @@
+@use "utilities" as u;
+
+.header {
+  --justify-content: center;
+
+  --logo-width: 40px;
+
+  display: flex;
+  justify-content: var(--justify-content);
+  align-items: center;
+
+  &__logo {
+    display: block;
+    width: var(--logo-width);
+  }
+
+  @include u.breakpoint(large) {
+    --justify-content: flex-start;
+
+    --logo-width: 64px;
+  }
+}
