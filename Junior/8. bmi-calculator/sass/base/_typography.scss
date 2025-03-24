@@ -6,3 +6,38 @@
   font-style: normal;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: -5%;
+  color: var(--color-heading);
+}
+
+h1 {
+  font-size: clamp(2rem, -0.143rem + 5.714vw, 4rem);
+  line-height: 1.2; 
+}
+
+h2 {
+  font-size: clamp(2rem, 0.929rem + 2.857vw, 3rem);
+  line-height: 1.2; 
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 29px; 
+}
+
+.limitations {
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.5; 
+  }
+}
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-paragraph);
+}
+

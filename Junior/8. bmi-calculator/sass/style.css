@@ -20,14 +20,17 @@ input {
 
 body {
   font-family: "Inter", sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.5;
 }
 
 img {
   display: block;
   width: 100%;
+}
+
+.wrapper {
+  max-width: 1160px;
+  margin-inline: auto;
+  width: 90%;
 }
 
 @font-face {
@@ -36,6 +39,45 @@ img {
   font-weight: 100 900;
   font-style: normal;
 }
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: -5%;
+  color: var(--color-heading);
+}
+
+h1 {
+  font-size: clamp(2rem, -0.143rem + 5.714vw, 4rem);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(2rem, 0.929rem + 2.857vw, 3rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 29px;
+}
+
+.limitations h3 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-paragraph);
+}
+
+:root {
+  --color-paragraph: #5E6E85;
+  --color-heading: #253347;
+}
+
 .header {
   --justify-content: center;
   --logo-width: 40px;
@@ -47,7 +89,7 @@ img {
   display: block;
   width: var(--logo-width);
 }
-@media (width >= 72.5em) {
+@media (min-width: 700px) {
   .header {
     --justify-content: flex-start;
     --logo-width: 64px;
@@ -55,36 +97,65 @@ img {
 }
 
 .hero {
+  /* for the hero container */
   --flex-direction: column;
   --gap: 2rem;
   --padding-block: 2rem 4rem;
+  --justify-content: center;
+  --width-of-content-n-form: 100%;
+  /* for the content */
   --content-gap: 1.5rem;
+  --content-max-width-p: unset;
+  --content-text-align: center;
+  --content-padding-block: 0;
   display: flex;
   flex-direction: var(--flex-direction);
+  justify-content: var(--justify-content);
   gap: var(--gap);
   padding-block: var(--padding-block);
 }
 .hero__content {
   display: flex;
   flex-direction: column;
+  text-align: var(--content-text-align);
   gap: var(--content-gap);
+  width: var(--width-of-content-n-form);
+  padding-block: var(--content-padding-block);
+}
+.hero__content p {
+  max-width: var(--content-max-width-p);
 }
 .hero__form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: var(--width-of-content-n-form);
 }
-@media (width >= 43.75em) {
+@media (min-width: 700px) {
   .hero {
+    /* for the hero container */
     --gap: 2.5rem;
     --padding-block: 2.5rem 5.5rem;
   }
 }
-@media (width >= 72.5em) {
+@media (min-width: 1160px) {
   .hero {
+    /* for the hero container */
     --flex-direction: row;
-    --gap: 2rem;
+    --gap: unset;
     --padding-block: 1.5rem 5rem;
+    --justify-content: space-between;
+    --width-of-content-n-form: calc(50% - 1rem);
+    /* for the content */
     --content-gap: 2rem;
+    --content-max-width-p: 465px;
+    --content-text-align: left;
+    --content-padding-block: 4.5rem;
+  }
+  .hero__form {
+    margin-left: 1rem;
+  }
+  .hero__content {
+    margin-right: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
