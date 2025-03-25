@@ -25,7 +25,7 @@
       <div role="region" aria-label="BMI calculator" class="hero">
         <section class="hero__content">
           <h1>Body Mass<br />Index Calculator</h1>
-          <p>
+          <p class="hero__content-description">
             Better understand your weight in relation to your height using our
             body mass index (BM) calculator. While BMI is not the sole
             determinant of a healthy weight, it offers a valuable starting point
@@ -33,28 +33,137 @@
           </p>
         </section>
 
-        <form action="" class="hero__form">
-          <p class="hero__form-title">Enter your details below</p>
-          <div class="hero__form-radio-container">
-            <div class="hero__form-radio-container-item">
-              <input type="radio" name="unit" id="metric" value="metric" />
-              <label for="metric">Metric</label>
+        <section class="bmi" aria-labelledby="bmi-calculator-instruction">
+          <p id="bmi-calculator-instruction" class="bmi-instruction">
+            Enter your details below
+          </p>
+          <div class="bmi__radio-container">
+            <div class="bmi__radio-item">
+              <label for="metric">
+                <input
+                  type="radio"
+                  name="unit"
+                  id="metric"
+                  value="metric"
+                  checked
+                />
+                <span class="bmi__custom-radio"></span>
+                <span>Metric</span>
+              </label>
             </div>
-            <div class="hero__form-radio-container-item">
-              <input type="radio" name="unit" id="imperial" value="imperial" />
-              <label for="imperial">Imperial</label>
+            <div class="bmi__radio-item">
+              <label for="imperial">
+                <input
+                  type="radio"
+                  name="unit"
+                  id="imperial"
+                  value="imperial"
+                />
+                <span class="bmi__custom-radio"></span>
+                <span>Imperial</span>
+              </label>
             </div>
           </div>
-          <div class="hero__form-input-container">
-            <label for="height">Height</label>
+          <!--For Metric -->
+          <div class="bmi__matric-container">
+            <label for="height">
+              <span>Height</span>
+              <div class="bmi__matric-input">
+                <input
+                  type="text"
+                  aria-describedby="description-cm"
+                  inputmode="numeric"
+                  id="height"
+                  name="height"
+                  placeholder="0"
+                />
+                <p class="sr-only" id="description-cm">
+                  number only in centimeters
+                </p>
+                <span>cm</span>
+              </div>
+            </label>
+            <label for="weight">
+              <span>Weight</span>
+              <div class="bmi__matric-input">
+                <input
+                  type="text"
+                  aria-describedby="description-kg"
+                  inputmode="numeric"
+                  id="weight"
+                  name="weight"
+                  placeholder="0"
+                />
+                <p class="sr-only" id="description-kg">
+                  number only in kilograms
+                </p>
+                <span>kg</span>
+              </div>
+            </label>
+          </div>
+          <!--For Imperial -->
+          <div class="bmi__imperial-container">
+            <!-- for height -->
             <div>
-              <input type="number" id="height" name="height" />
-              <span>cm</span>
+              <label for="height">Height</label>
+              <div>
+                <div>
+                  <input
+                    type="text"
+                    aria-describedby="description-ft"
+                    inputmode="numeric"
+                    id="height-ft"
+                    name="height-ft"
+                  />
+                  <p class="sr-only" id="description-ft">number only in feet</p>
+                  <span>ft</span>
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    aria-describedby="description-in"
+                    inputmode="numeric"
+                    id="height-in"
+                    name="height-in"
+                  />
+                  <p class="sr-only" id="description-in">
+                    number only in inches
+                  </p>
+                  <span>in</span>
+                </div>
+              </div>
             </div>
-            <label for="weight">Weight</label>
+            <!-- for weight -->
             <div>
-              <input type="number" id="weight" name="weight" />
-              <span>kg</span>
+              <label for="weight">Weight</label>
+              <div>
+                <div>
+                  <input
+                    type="text"
+                    aria-describedby="description-st"
+                    inputmode="numeric"
+                    id="weight-st"
+                    name="weight-st"
+                  />
+                  <p class="sr-only" id="description-st">
+                    number only in stones
+                  </p>
+                  <span>st</span>
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    aria-describedby="description-lb"
+                    inputmode="numeric"
+                    id="weight-lb"
+                    name="weight-lb"
+                  />
+                  <p class="sr-only" id="description-lb">
+                    number only in pounds
+                  </p>
+                  <span>lb</span>
+                </div>
+              </div>
             </div>
           </div>
           <!-- BMI result -->
@@ -75,7 +184,7 @@
               Enter your height and weight and you'll see your BMI result here
             </p>
           </section>
-        </form>
+        </section>
       </div>
 
       <section>
@@ -183,5 +292,6 @@
         </div>
       </section>
     </main>
+    <script src="./script.js"></script>
   </body>
 </html>

@@ -1,0 +1,131 @@
+.bmi {
+  --gap: 1.5rem;
+  --padding: 1.5rem;
+  /* metric container */ 
+  --metric-gap: 1rem;
+  --metric-flex-direction: column;
+  --metric-input-padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var(--padding);
+  width: 100%;
+  background-color: var(--color-white);
+  border-radius: 1rem;
+  box-shadow: 16px 32px 56px 0px hsla(211, 40%, 69%, 0.25);
+  /* radio section */
+  &__radio-container {
+    display: flex; 
+    gap: 1.5rem; 
+    width: 100%;
+  }
+
+  &__radio-item { 
+    width: 100%; 
+  }
+
+  &__radio-item label {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+    cursor: pointer;
+    width: fit-content;
+  }
+
+  &__radio-item input {
+    display: none; 
+  }
+
+  &__radio-item label {
+    cursor: pointer;
+  }
+
+  &__custom-radio {
+    display: block;
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    border: 1px solid #5E6E85;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  &__radio-item input:checked + .bmi__custom-radio {
+    background-color: #E1E7FE;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #345FF6;
+    }
+  }
+  /* metric container */
+  &__matric-container {
+    display: none;
+    flex-direction: var(--metric-flex-direction);
+    gap: var(--metric-gap);
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  &__matric-container label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  &__matric-input {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    padding: var(--metric-input-padding);
+    border-radius: 12px;
+    border: 1px solid #5E6E85;
+  }
+
+  &__matric-input input {
+    width: 100%;  
+  }
+
+  &__matric-input span {
+    width: fit-content;
+  }
+  
+  
+  
+  
+  
+  /* imperial container */
+  &__imperial-container {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 37.5em) {
+    --gap: 2rem;
+    --padding: 2rem;
+    /* metric container */
+    --metric-gap: 1.5rem;
+    --metric-flex-direction: row;
+  }
+
+  @media (min-width: 64em) {
+     /* metric container */
+     --metric-input-padding: 1rem 1.5rem;
+  }
+}
