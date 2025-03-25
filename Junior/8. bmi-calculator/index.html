@@ -22,6 +22,7 @@
     </header>
 
     <main class="main wrapper">
+      <!-- Hero section -->
       <div role="region" aria-label="BMI calculator" class="hero">
         <section class="hero__content">
           <h1>Body Mass<br />Index Calculator</h1>
@@ -65,9 +66,9 @@
             </div>
           </div>
           <!--For Metric -->
-          <div class="bmi__matric-container">
+          <div class="bmi__matric-container active">
             <label for="height">
-              <span>Height</span>
+              <span class="label-title">Height</span>
               <div class="bmi__matric-input">
                 <input
                   type="text"
@@ -77,6 +78,7 @@
                   name="height"
                   placeholder="0"
                 />
+                <!-- for screen reader -->
                 <p class="sr-only" id="description-cm">
                   number only in centimeters
                 </p>
@@ -84,7 +86,7 @@
               </div>
             </label>
             <label for="weight">
-              <span>Weight</span>
+              <span class="label-title">Weight</span>
               <div class="bmi__matric-input">
                 <input
                   type="text"
@@ -94,6 +96,7 @@
                   name="weight"
                   placeholder="0"
                 />
+                <!-- for screen reader -->
                 <p class="sr-only" id="description-kg">
                   number only in kilograms
                 </p>
@@ -104,59 +107,67 @@
           <!--For Imperial -->
           <div class="bmi__imperial-container">
             <!-- for height -->
-            <div>
-              <label for="height">Height</label>
-              <div>
-                <div>
+            <div class="bmi__imperial-input-container">
+              <label for="height-ft" class="label-title">Height</label>
+              <div class="bmi__imperial-input-flex">
+                <div class="bmi__imperial-input">
                   <input
                     type="text"
                     aria-describedby="description-ft"
                     inputmode="numeric"
                     id="height-ft"
                     name="height-ft"
+                    aria-describedby="height-unit"
+                    placeholder="0"
                   />
                   <p class="sr-only" id="description-ft">number only in feet</p>
                   <span>ft</span>
                 </div>
-                <div>
+                <div class="bmi__imperial-input">
                   <input
                     type="text"
                     aria-describedby="description-in"
                     inputmode="numeric"
                     id="height-in"
                     name="height-in"
+                    aria-describedby="height-unit"
+                    placeholder="0"
                   />
                   <p class="sr-only" id="description-in">
                     number only in inches
                   </p>
                   <span>in</span>
                 </div>
+                <!-- for screen reader -->
+                <span id="height-unit" class="sr-only">(feet and inches)</span>
               </div>
             </div>
             <!-- for weight -->
-            <div>
-              <label for="weight">Weight</label>
-              <div>
-                <div>
+            <div class="bmi__imperial-input-container">
+              <label for="weight-st" class="label-title">Weight</label>
+              <div class="bmi__imperial-input-flex">
+                <div class="bmi__imperial-input">
                   <input
                     type="text"
                     aria-describedby="description-st"
                     inputmode="numeric"
                     id="weight-st"
                     name="weight-st"
+                    placeholder="0"
                   />
                   <p class="sr-only" id="description-st">
                     number only in stones
                   </p>
                   <span>st</span>
                 </div>
-                <div>
+                <div class="bmi__imperial-input">
                   <input
                     type="text"
                     aria-describedby="description-lb"
                     inputmode="numeric"
                     id="weight-lb"
                     name="weight-lb"
+                    placeholder="0"
                   />
                   <p class="sr-only" id="description-lb">
                     number only in pounds
@@ -167,26 +178,26 @@
             </div>
           </div>
           <!-- BMI result -->
-          <div>
-            <p>
+          <div class="bmi-result">
+            <p class="bmi-result__value">
               <span>Your BMI is...</span>
-              <span id="bmi-result">23.4</span>
+              <span class="bmi-result__value-number">23.4</span>
             </p>
-            <p>
+            <p class="bmi-result__description">
               Your BMI suggests you're
               <span id="bmi-classification">a healthy weight</span>. Your ideal
               weight is between <span id="bmi-range">18.0 - 24.0</span>.
             </p>
           </div>
-          <section>
-            <h3>Welcome!</h3>
-            <p>
+          <section class="bmi-welcome active">
+            <h3 class="bmi-welcome__title">Welcome!</h3>
+            <p class="bmi-welcome__description">
               Enter your height and weight and you'll see your BMI result here
             </p>
           </section>
         </section>
       </div>
-
+      <!-- What your BMI result means section -->
       <section>
         <img src="./assets/images/image-man-eating.webp" alt="man eating" />
         <div>
@@ -198,7 +209,7 @@
           </p>
         </div>
       </section>
-
+      <!-- Health benefits section -->
       <div role="region" aria-label="Health benefits">
         <section>
           <img src="./assets/images/icon-eating.svg" alt="eating" />
@@ -225,7 +236,7 @@
           </p>
         </section>
       </div>
-
+      <!-- Limitations of BMI section -->
       <section class="limitations">
         <h2>Limitations of BMI</h2>
         <p>

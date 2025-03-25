@@ -1,0 +1,50 @@
+.bmi-result,
+.bmi-welcome {
+    --border-radius: 1rem;
+
+    display: none;
+    padding: 1.5rem;
+    background-color: #345FF6;
+    border-radius: var(--border-radius);
+    
+
+    &.active {
+        display: flex;
+    }
+
+    @media (min-width: 37.5em) {
+        --border-radius: 1rem 999px 999px 1rem;
+    }
+}
+
+.bmi-result {
+  --flex-direction: column; 
+ 
+  flex-direction: var(--flex-direction);
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+
+  &__value {
+    width: 100%;
+  }
+
+  &__description {
+    width: 100%;
+  }
+
+  @media (min-width: 37.5em) {
+    --flex-direction: row;
+  }
+}
+
+.bmi-welcome {  
+    --gap: 1.5rem;
+
+  flex-direction: column; 
+  gap: var(--gap);
+
+  @media (min-width: 37.5em) {
+    --gap: 1rem;
+  }
+}

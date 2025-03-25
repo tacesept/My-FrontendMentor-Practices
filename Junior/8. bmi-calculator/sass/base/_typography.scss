@@ -15,7 +15,8 @@ h3,
   color: var(--color-heading);
 }
 
-h1 {
+h1,
+.bmi-result__value-number {
   font-size: clamp(2rem, -0.143rem + 5.714vw, 4rem);
   line-height: 1.2; 
 }
@@ -30,7 +31,8 @@ h3,
 .bmi__matric-input input,
 .bmi__imperial-input input,
 .bmi__imperial-input span,
-.bmi__matric-input span {
+.bmi__matric-input span,
+.bmi-welcome__title {
   font-size: 1.5rem;
   line-height: 29px; 
 }
@@ -64,4 +66,29 @@ p {
 .bmi__imperial-input span {
   color: #345FF6;
 }
+
+.bmi-result__value,
+.bmi-welcome__title { 
+  color: #FFFFFF;
+  font-weight: 600;
+}
  
+.bmi-result__description,
+.bmi-welcome__description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #FFFFFF;
+  opacity: 0.8;
+}
+
+#bmi-range {
+  font-weight: 700;
+  opacity: 1; 
+}
+
+.label-title {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #5E6E85;
+}
+

@@ -2,7 +2,7 @@
   --gap: 1.5rem;
   --padding: 1.5rem;
   /* metric container */ 
-  --metric-gap: 1rem;
+  --metric-n-imperial-gap: 1rem;
   --metric-flex-direction: column;
   --metric-input-padding: 1.5rem;
 
@@ -70,7 +70,7 @@
   &__matric-container {
     display: none;
     flex-direction: var(--metric-flex-direction);
-    gap: var(--metric-gap);
+    gap: var(--metric-n-imperial-gap);
 
     &.active {
       display: flex;
@@ -84,7 +84,8 @@
     width: 100%;
   }
 
-  &__matric-input {
+  &__matric-input,
+  &__imperial-input {
     display: flex;
     gap: 1.5rem;
     width: 100%;
@@ -93,17 +94,16 @@
     border: 1px solid #5E6E85;
   }
 
-  &__matric-input input {
+  &__matric-input input,
+  &__imperial-input input {
     width: 100%;  
   }
 
-  &__matric-input span {
+  &__matric-input span,
+  &__imperial-input span {
     width: fit-content;
   }
-  
-  
-  
-  
+
   
   /* imperial container */
   &__imperial-container {
@@ -116,11 +116,24 @@
     }
   }
 
+  &__imperial-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  &__imperial-input-flex {
+    display: flex; 
+    gap: var(--metric-n-imperial-gap);
+    width: 100%;
+  }
+
   @media (min-width: 37.5em) {
     --gap: 2rem;
     --padding: 2rem;
     /* metric container */
-    --metric-gap: 1.5rem;
+    --metric-n-imperial-gap: 1.5rem;
     --metric-flex-direction: row;
   }
 

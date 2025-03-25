@@ -56,7 +56,8 @@ h3,
   color: var(--color-heading);
 }
 
-h1 {
+h1,
+.bmi-result__value-number {
   font-size: clamp(2rem, -0.143rem + 5.714vw, 4rem);
   line-height: 1.2;
 }
@@ -71,7 +72,8 @@ h3,
 .bmi__matric-input input,
 .bmi__imperial-input input,
 .bmi__imperial-input span,
-.bmi__matric-input span {
+.bmi__matric-input span,
+.bmi-welcome__title {
   font-size: 1.5rem;
   line-height: 29px;
 }
@@ -102,6 +104,31 @@ p {
 .bmi__matric-input span,
 .bmi__imperial-input span {
   color: #345FF6;
+}
+
+.bmi-result__value,
+.bmi-welcome__title {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.bmi-result__description,
+.bmi-welcome__description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #FFFFFF;
+  opacity: 0.8;
+}
+
+#bmi-range {
+  font-weight: 700;
+  opacity: 1;
+}
+
+.label-title {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #5E6E85;
 }
 
 :root {
@@ -179,7 +206,7 @@ p {
   --gap: 1.5rem;
   --padding: 1.5rem;
   /* metric container */
-  --metric-gap: 1rem;
+  --metric-n-imperial-gap: 1rem;
   --metric-flex-direction: column;
   --metric-input-padding: 1.5rem;
   display: flex;
@@ -242,7 +269,7 @@ p {
 .bmi__matric-container {
   display: none;
   flex-direction: var(--metric-flex-direction);
-  gap: var(--metric-gap);
+  gap: var(--metric-n-imperial-gap);
 }
 .bmi__matric-container.active {
   display: flex;
@@ -253,7 +280,7 @@ p {
   gap: 0.5rem;
   width: 100%;
 }
-.bmi__matric-input {
+.bmi__matric-input, .bmi__imperial-input {
   display: flex;
   gap: 1.5rem;
   width: 100%;
@@ -261,10 +288,10 @@ p {
   border-radius: 12px;
   border: 1px solid #5E6E85;
 }
-.bmi__matric-input input {
+.bmi__matric-input input, .bmi__imperial-input input {
   width: 100%;
 }
-.bmi__matric-input span {
+.bmi__matric-input span, .bmi__imperial-input span {
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -276,12 +303,23 @@ p {
 .bmi__imperial-container.active {
   display: flex;
 }
+.bmi__imperial-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+.bmi__imperial-input-flex {
+  display: flex;
+  gap: var(--metric-n-imperial-gap);
+  width: 100%;
+}
 @media (min-width: 37.5em) {
   .bmi {
     --gap: 2rem;
     --padding: 2rem;
     /* metric container */
-    --metric-gap: 1.5rem;
+    --metric-n-imperial-gap: 1.5rem;
     --metric-flex-direction: row;
   }
 }
@@ -289,5 +327,54 @@ p {
   .bmi {
     /* metric container */
     --metric-input-padding: 1rem 1.5rem;
+  }
+}
+
+.bmi-result,
+.bmi-welcome {
+  --border-radius: 1rem;
+  display: none;
+  padding: 1.5rem;
+  background-color: #345FF6;
+  border-radius: var(--border-radius);
+}
+.bmi-result.active,
+.bmi-welcome.active {
+  display: flex;
+}
+@media (min-width: 37.5em) {
+  .bmi-result,
+  .bmi-welcome {
+    --border-radius: 1rem 999px 999px 1rem;
+  }
+}
+
+.bmi-result {
+  --flex-direction: column;
+  flex-direction: var(--flex-direction);
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+.bmi-result__value {
+  width: 100%;
+}
+.bmi-result__description {
+  width: 100%;
+}
+@media (min-width: 37.5em) {
+  .bmi-result {
+    --flex-direction: row;
+  }
+}
+
+.bmi-welcome {
+  --gap: 1.5rem;
+  flex-direction: column;
+  gap: var(--gap);
+}
+@media (min-width: 37.5em) {
+  .bmi-welcome {
+    --gap: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
