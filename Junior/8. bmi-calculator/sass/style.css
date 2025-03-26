@@ -202,6 +202,105 @@ p {
   }
 }
 
+.bmi-info {
+  --content-pd-inline: 5%;
+  --content-max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-block: 0 60px;
+}
+.bmi-info img {
+  width: 100%;
+  max-width: 564px;
+}
+.bmi-info__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-inline: var(--content-pd-inline);
+  width: 100%;
+  max-width: var(--content-max-width);
+}
+@media (min-width: 37.5em) {
+  .bmi-info {
+    flex-direction: row;
+    align-items: center;
+    gap: 4.5rem;
+    padding-block: 0 90px;
+    --content-max-width: 331px;
+    --content-pd-inline: 0 5%;
+  }
+}
+@media (min-width: 64em) {
+  .bmi-info {
+    max-width: 1160px;
+    margin-inline: auto;
+    width: 90%;
+    background: url(../../assets/images/pattern-curved-line-left.svg) no-repeat top right;
+    padding-block: 55px 60px;
+    align-items: flex-end;
+    --content-pd-inline: 0;
+    --content-max-width: 465px;
+  }
+}
+
+.health-benefits {
+  --item-flex-direction: column;
+  --item-gap: 2rem;
+  --item-align-items: flex-start;
+  padding-block: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.health-benefits__item {
+  display: flex;
+  flex-direction: var(--item-flex-direction);
+  align-items: var(--item-align-items);
+  gap: var(--item-gap);
+}
+.health-benefits__item img {
+  width: 64px;
+}
+.health-benefits__item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media (min-width: 37.5em) {
+  .health-benefits {
+    padding-block: 3.75rem;
+    --item-flex-direction: row;
+    --item-gap: 2.5rem;
+    --item-align-items: center;
+  }
+}
+@media (min-width: 64em) {
+  .health-benefits {
+    padding-block: 5.625rem;
+    flex-direction: row;
+    gap: 2rem;
+    border-radius: 35px;
+    background: linear-gradient(to left, rgba(214, 230, 254, 0.3058823529), rgba(214, 230, 254, 0));
+    --item-flex-direction: column;
+    --item-gap: 3rem;
+    --item-align-items: flex-start;
+  }
+}
+
+.background-gradient {
+  background: linear-gradient(to left, rgba(214, 230, 254, 0.3058823529), rgba(214, 230, 254, 0));
+  margin-inline: auto;
+}
+@media (min-width: 64em) {
+  .background-gradient {
+    width: -moz-fit-content;
+    width: fit-content;
+    background: none;
+  }
+}
+
 .bmi {
   --gap: 1.5rem;
   --padding: 1.5rem;

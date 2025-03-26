@@ -1,0 +1,46 @@
+.bmi-info {
+  --content-pd-inline: 5%;
+  --content-max-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-block: 0 60px;
+
+  & img {
+    width: 100%;
+    max-width: 564px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-inline: var(--content-pd-inline);
+    width: 100%;
+    max-width: var(--content-max-width);
+  }
+
+  @media (min-width: 37.5em) {
+    flex-direction: row;
+    align-items: center;
+    gap: 4.5rem;
+    padding-block: 0 90px;
+
+    --content-max-width: 331px;
+    --content-pd-inline: 0 5%;
+  }
+
+  @media (min-width: 64em) {
+    max-width: 1160px;
+    margin-inline: auto;
+    width: 90%;
+    background: url(../../assets/images/pattern-curved-line-left.svg) no-repeat
+      top right; 
+    padding-block: 55px 60px;
+    align-items: flex-end;
+
+    --content-pd-inline: 0;
+    --content-max-width: 465px;
+  }
+}

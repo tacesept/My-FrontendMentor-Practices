@@ -1,0 +1,57 @@
+.health-benefits {
+  --item-flex-direction: column;
+  --item-gap: 2rem;
+  --item-align-items: flex-start;
+
+  padding-block: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  &__item {
+    display: flex;
+    flex-direction: var(--item-flex-direction);
+    align-items: var(--item-align-items);
+    gap: var(--item-gap);
+  }
+
+  &__item img {
+    width: 64px;
+  }
+
+  &__item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 37.5em) {
+    padding-block: 3.75rem;
+
+    --item-flex-direction: row;
+    --item-gap: 2.5rem;
+    --item-align-items: center;
+  }
+
+  @media (min-width: 64em) {
+    padding-block: 5.625rem;
+    flex-direction: row;
+    gap: 2rem;
+    border-radius: 35px; 
+    background: linear-gradient(to left, #d6e6fe4e, rgba(214, 230, 254, 0));
+
+    --item-flex-direction: column;
+    --item-gap: 3rem;
+    --item-align-items: flex-start;
+  }
+}
+
+.background-gradient {
+  background: linear-gradient(to left, #d6e6fe4e, rgba(214, 230, 254, 0));
+  margin-inline: auto;
+
+  @media (min-width: 64em) {
+    width: fit-content;
+    background: none;
+  }
+}
