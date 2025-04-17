@@ -1,0 +1,121 @@
+$color-gray-800: #1a2a33;
+$color-cyan-950: #1f3641;
+$color-slate-300: #a8bfc9;
+$color-sky-100: #dbe8ed;
+$color-teal-500: #31c3bd;
+$color-teal-300: #65e9e4;
+$color-yellow-500: #f2b137;
+$color-amber-400: #ffc860;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* This makes 1rem = 10px */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.6rem;
+  background-color: $color-gray-800;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+} 
+
+#root { 
+  width: 95%;
+  max-width: 470px;
+  min-width: 327px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem; 
+  text-align: center; 
+
+  @media (min-width: 768px) {
+    gap: 4rem;
+  }
+}
+
+.select-mark {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  color: $color-slate-300;
+  background-color: $color-cyan-950;
+  padding: 2.4rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  box-shadow: 0px 8px 0px 0px #10212A;
+
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  span {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  &__buttons {
+    display: flex; 
+    background-color: $color-gray-800;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding-block: 1.2rem;
+      border-radius: 1rem;
+      width: 100%;
+
+      &:hover,
+      &:focus {
+        background-color: $color-slate-300;
+      }
+
+      &:hover svg path,
+      &:focus svg path {
+        fill: $color-gray-800;
+      } 
+    }
+  }
+}
+
+.start-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%; 
+
+  button {
+    width: 100%;
+    background-color: $color-yellow-500;
+    padding-block: 1.4rem 2.2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 8px 0px 0px #cc8b13;
+    border: none;
+  }
+
+  button:nth-child(2) {
+    background-color: $color-teal-500;
+    box-shadow: 0px 8px 0px 0px #118c87;
+  }
+}

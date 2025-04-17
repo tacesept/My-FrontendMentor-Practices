@@ -1,9 +1,7 @@
-const Game = () => {
+export default function Game() {
   return (
-    <main className="game">
+    <div>
       <h1>Game</h1>
-    </main>
-  )
-}   
-
-export default Game;
+    </div>
+  );
+}

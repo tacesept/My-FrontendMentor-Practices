@@ -1,17 +1,20 @@
- import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
- import Menu from './components/Menu'; 
- import Game from './components/Game';
+import { useState } from 'react';
+import Menu from './components/Menu';
+import Game from './components/Game';
 
-function App() { 
+function App() {
+  const [screen, setScreen] = useState('menu');
+
+  const handleScreen = (screen) => {
+    setScreen(screen);
+  }
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Menu />} />
-        <Route path="/game" element={<Game />} /> 
-      </Routes>
-    </Router>
+    <main className='container'>
+      {screen === 'menu' && <Menu handleScreen={handleScreen} />}
+      {screen === 'game' && <Game handleScreen={handleScreen} />}
+    </main>
   )
 }
 
-export default App
+export default App;
