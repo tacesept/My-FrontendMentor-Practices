@@ -90,6 +90,13 @@ a:hover {
 .price .eth {
   color: hsl(178, 100%, 50%);
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.price .eth img {
+  width: 1.1rem;
+  height: 1.8rem;
 }
 .price .days {
   display: flex;
