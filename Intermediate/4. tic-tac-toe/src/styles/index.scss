@@ -1,0 +1,393 @@
+$color-gray-800: #1a2a33;
+$color-cyan-950: #1f3641;
+$color-slate-300: #a8bfc9;
+$color-sky-100: #dbe8ed;
+$color-teal-500: #31c3bd;
+$color-teal-300: #65e9e4;
+$color-yellow-500: #f2b137;
+$color-amber-400: #ffc860;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* This makes 1rem = 10px */
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.6rem;
+  background-color: $color-gray-800;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+#root {
+  width: 95%;
+  max-width: 470px;
+  min-width: 327px;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    gap: 4rem;
+  }
+}
+
+.select-mark {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  color: $color-slate-300;
+  background-color: $color-cyan-950;
+  padding: 2.4rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  box-shadow: 0px 8px 0px 0px #10212a;
+
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  span {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  &__buttons {
+    display: flex;
+    background-color: $color-gray-800;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding-block: 1.2rem;
+      border-radius: 1rem;
+      width: 100%;
+
+      &:hover {
+        background-color: $color-slate-300;
+      }
+
+      &:hover svg path {
+        fill: $color-gray-800;
+      }
+
+      &.active {
+        background-color: $color-slate-300;
+      }
+
+      &.active svg path {
+        fill: $color-gray-800;
+      }
+    }
+  }
+}
+
+.start-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 100%;
+
+  button {
+    width: 100%;
+    background-color: $color-yellow-500;
+    padding-block: 1.4rem 2.2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 8px 0px 0px #cc8b13;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-amber-400;
+    }
+  }
+
+  button:nth-child(2) {
+    background-color: $color-teal-500;
+    box-shadow: 0px 8px 0px 0px #118c87;
+
+    &:hover {
+      background-color: $color-teal-300;
+    }
+  }
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 6rem;
+  width: 328px;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    gap: 2rem;
+  }
+}
+
+.logo {
+  width: 72px;
+}
+
+.game-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.turn-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  color: $color-slate-300;
+  background-color: $color-cyan-950;
+  width: 100%;
+  padding-block: 0.9rem;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 0px 0px #10212a;
+  font-size: 1.4rem; 
+
+  @media (min-width: 768px) {
+    padding-block: 1.3rem;
+    font-size: 1.6rem;
+  }
+
+  img {
+    width: 1.6rem;
+  } 
+}
+
+.restart-button {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  button {
+    background-color: $color-slate-300;
+    border: none;
+    cursor: pointer;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 0px 0px #10212a;
+
+    @media (min-width: 768px) {
+      padding: 1.6rem;
+    }
+
+    &:hover {
+      background-color: $color-sky-100;
+    }
+  }
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 0 auto;
+
+  .box {
+    width: 96px;
+    height: 96px;
+    background-color: $color-cyan-950;
+    border-radius: 1.5rem;
+    box-shadow: 0px 4px 0px 0px #10212a;
+    transition: all 0.3s ease;
+
+    &.disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    img {
+      width: 40px;
+
+      @media (min-width: 768px) {
+        width: 64px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      width: 140px;
+      height: 140px;
+    }
+  }
+}
+
+/* Score */
+.score-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+
+  .score-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.2rem;
+    background-color: $color-slate-300;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 0px 0px #10212a;
+
+    &.score-box-o {
+      background-color: $color-yellow-500;
+    }
+
+    &.score-box-x {
+      background-color: $color-teal-500;
+    }
+
+    @media (min-width: 768px) {
+      padding: 1.6rem;
+    }
+  }
+}
+
+.score-box-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $color-gray-800;
+
+  @media (min-width: 768px) {
+    font-size: 1.4rem;
+  }
+}
+
+.score-box-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $color-gray-800;
+
+  @media (min-width: 768px) {
+    font-size: 2.4rem;
+  }
+}
+
+.game-over-msg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  color: $color-slate-300;
+  background-color: $color-cyan-950;
+  padding: 2.4rem; 
+  box-shadow: 0px 8px 0px 0px #10212a;
+  width: 100%;
+
+  img {
+    width: 28px;
+
+    @media (min-width: 768px) {
+      width: 64px;
+    }
+  } 
+
+  .winner-msg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    @media (min-width: 768px) {
+      font-size: 4rem;
+      letter-spacing: 2.5px;
+    }
+  }
+
+  .tie-msg {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    
+
+    @media (min-width: 768px) {
+      font-size: 4rem;
+      letter-spacing: 2.5px;
+    }
+  }
+}
+
+.game-over-buttons,
+.restart-msg-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+  width: 100%;
+  
+  button {
+    background-color: $color-slate-300;
+    border: none;
+    cursor: pointer;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    color: $color-gray-800;
+    box-shadow: 0px 4px 0px 0px #10212a;
+    font-weight: 700;
+
+    &.yellow-button {
+      background-color: $color-yellow-500;
+      box-shadow: 0px 4px 0px 0px #cc8b13;
+    }
+  }
+}
+
+.restart-msg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  color: $color-slate-300;
+  background-color: $color-cyan-950;
+  padding: 2.4rem; 
+  box-shadow: 0px 8px 0px 0px #10212a;
+  width: 100%;
+}
+ 
