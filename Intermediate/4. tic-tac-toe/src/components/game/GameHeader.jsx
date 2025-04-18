@@ -1,18 +1,22 @@
 import PropTypes from "prop-types";
+import iconX from "../../assets/icon-x.svg";
+import iconO from "../../assets/icon-o.svg";
+import iconRestart from "../../assets/icon-restart.svg";
+import logo from "../../assets/logo.svg";
 
 export default function GameHeader({ turn, winner, onRestartClick }) {
   return (
     <div className="game-header">
       <div>
-        <img src="/src/assets/logo.svg" alt="logo" className="logo" />
+        <img src={logo} alt="logo" className="logo" />
       </div>
       {!winner ? (
         <div className="turn-indicator-container">
           <div className="turn-indicator">
             {turn === "x" ? (
-              <img src="/src/assets/icon-x.svg" alt="x" />
+              <img src={iconX} alt="x" />
             ) : (
-              <img src="/src/assets/icon-o.svg" alt="o" />
+              <img src={iconO} alt="o" />
             )}
             <span>TURN</span>
           </div>
@@ -30,7 +34,7 @@ export default function GameHeader({ turn, winner, onRestartClick }) {
               <>
                 <img
                   className="winner-icon"
-                  src={`/src/assets/icon-${winner}.svg`}
+                  src={winner === "x" ? iconX : iconO}
                   alt={winner}
                 />
                 <span>WINS</span>
@@ -41,7 +45,7 @@ export default function GameHeader({ turn, winner, onRestartClick }) {
       )}
       <div className="restart-button">
         <button onClick={onRestartClick}>
-          <img src="/src/assets/icon-restart.svg" alt="restart" />
+          <img src={iconRestart} alt="restart" />
         </button>
       </div>
     </div>

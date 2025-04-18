@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import iconX from "../../assets/icon-x.svg";
+import iconO from "../../assets/icon-o.svg";
 
 export default function GameOverMessage({
   winner,
@@ -23,7 +25,7 @@ export default function GameOverMessage({
           </span>
           <span className="winner-msg">
             <img
-              src={`/src/assets/icon-${winner}.svg`}
+              src={winner === "x" ? iconX : iconO}
               alt={winner}
               className="winner-icon"
             />

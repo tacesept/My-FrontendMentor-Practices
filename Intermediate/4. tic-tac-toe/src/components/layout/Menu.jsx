@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../../assets/logo.svg";
 
 export default function Menu({ setGameMode }) {
   const [activeMark, setActiveMark] = useState("");
@@ -15,7 +16,7 @@ export default function Menu({ setGameMode }) {
   return (
     <div className="menu">
       <div>
-        <img src="/src/assets/logo.svg" alt="logo" />
+        <img src={logo} alt="logo" />
       </div>
 
       <section className="select-mark">

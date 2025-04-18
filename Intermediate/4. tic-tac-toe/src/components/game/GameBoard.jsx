@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import iconX from "../../assets/icon-x.svg";
+import iconO from "../../assets/icon-o.svg";
 
 export default function GameBoard({ board, gameOver, isCPUTurn, onBoxClick }) {
   return (
@@ -12,7 +14,7 @@ export default function GameBoard({ board, gameOver, isCPUTurn, onBoxClick }) {
         >
           {board[index] && (
             <img
-              src={`/src/assets/icon-${board[index]}.svg`}
+              src={board[index] === "x" ? iconX : iconO}
               alt={board[index]}
             />
           )}

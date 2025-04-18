@@ -1,5 +1,7 @@
 # Tic Tac Toe Game
 
+[Live Demo](https://silly-heliotrope-085a4f.netlify.app/)
+
 A modern implementation of the classic Tic Tac Toe game built with React.
 
 ## Project Structure
