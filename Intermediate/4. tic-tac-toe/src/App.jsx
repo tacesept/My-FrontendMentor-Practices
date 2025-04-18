@@ -1,29 +1,20 @@
-import { useState, useEffect } from "react";
-import Menu from "./components/Menu";
-import Game from "./components/Game";
+import { useState } from 'react';
+import Menu from './components/Menu';
+import Game from './components/Game';
 
 function App() {
-  const [screen, setScreen] = useState("menu");
-  const [gameMode, setGameMode] = useState({
-    playerMark: null,
-    opponent: null,
-  }); 
+  const [screen, setScreen] = useState('menu');
 
-  useEffect(() => {
-    if (gameMode.playerMark && gameMode.opponent) {
-      setScreen("game");
-    }
-  }, [gameMode]);
- 
+  const handleScreen = (screen) => {
+    setScreen(screen);
+  }
 
   return (
-    <main className="container">
-      {screen === "menu" && (
-        <Menu setScreen={setScreen} setGameMode={setGameMode} />
-      )}
-      {screen === "game" && <Game gameMode={gameMode} setGameMode={setGameMode} setScreen={setScreen} />}
+    <main className='container'>
+      {screen === 'menu' && <Menu handleScreen={handleScreen} />}
+      {screen === 'game' && <Game handleScreen={handleScreen} />}
     </main>
-  );
+  )
 }
 
 export default App;
