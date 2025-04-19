@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext } from "react";
 import HamburgerMenu from "./HamburgerMenu";
 import HeaderLogo from "./HeaderLogo";
+import NAV_LINKS from "./NavLinks";
 const HeaderContext = createContext();
 
 export { HeaderContext };
@@ -8,13 +9,7 @@ export { HeaderContext };
 export default function Header() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const NAV_LINKS = [
-    { label: "About", href: "/" },
-    { label: "Careers", href: "/" },
-    { label: "Events", href: "/" },
-    { label: "Products", href: "/" },
-    { label: "Support", href: "/" },
-  ];
+  
 
   const renderNavLinks = () => (
     <ul>

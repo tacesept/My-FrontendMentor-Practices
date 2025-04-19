@@ -8,6 +8,11 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  max-width: 144rem;
+  margin-inline: auto;
+}
+
 button {
   border: none;
   background: none;
@@ -28,7 +33,7 @@ ul {
 }
 
 .header {
-  background: url(src/assets/images/mobile/image-hero.jpg) no-repeat center
+  background: url(/image-hero-mobile.jpg) no-repeat center
     center;
   background-size: cover;
   height: 65rem;
@@ -36,7 +41,7 @@ ul {
   flex-direction: column;
   align-items: center;
   @media (min-width: 768px) {
-    background: url(src/assets/images/desktop/image-hero.jpg) no-repeat center
+    background: url(/image-hero.jpg) no-repeat center
       center;
   }
 
@@ -45,10 +50,11 @@ ul {
     justify-content: flex-end;
     gap: 3.2rem;
     color: #fff;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 2.4rem;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
     text-transform: uppercase;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
   }
 
   &__logo {
@@ -209,10 +215,33 @@ ul {
   .creations-header {
     display: flex;
     justify-content: center;
-    padding-inline: 2.4rem;
+    align-items: center;
 
     @media (min-width: 768px) {
       justify-content: space-between;
+    }
+  }
+
+  .see-all-mobile {
+    margin-inline: auto;
+    display: block;
+  }
+
+  button {
+    background-color: #fff;
+    color: #000;
+    padding: 1.3rem 4rem;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    font-weight: 400;
+    font-family: "Alata", sans-serif;
+    text-transform: uppercase;
+    border: 1px solid #000;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
     }
   }
 
@@ -244,6 +273,14 @@ ul {
       grid-template-columns: repeat(4, 1fr);
       gap: 3rem;
     }
+
+    h3 {
+      font-size: 2.4rem;
+      line-height: 2.4rem;
+      text-align: center;
+      font-weight: 300;
+      font-family: "Josefin Sans", sans-serif;
+    }
   }
 
   .creation-card {
@@ -259,6 +296,81 @@ ul {
 
     @media (min-width: 768px) {
       height: 45rem;
+    }
+  }
+}
+
+.footer {
+  background-color: #000;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 111rem;
+    width: 100%;
+    gap: 4.8rem;
+    padding-block: 5.6rem;
+    margin-top: 9.6rem;
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+
+    @media (min-width: 768px) {
+      margin-top: 18.4rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1.4rem;
+    }
+  }
+
+  &__logo-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 3.2rem;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    gap: 1.4rem;
+
+    @media (min-width: 768px) {
+      align-items: flex-end;
+    }
+  }
+
+  &__social ul {
+    display: flex;
+    gap: 1.6rem;
+
+    li {
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-color: #fff;
+      }
     }
   }
 }

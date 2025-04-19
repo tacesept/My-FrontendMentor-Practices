@@ -1,12 +1,39 @@
-# React + Vite
+# Loopstudios Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive landing page for Loopstudios built with React and SCSS. This project showcases modern web development practices and responsive design principles.
 
-Currently, two official plugins are available:
+## Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Loopstudios Landing Page Preview](./preview.jpg)
 
-## Expanding the ESLint configuration
+## Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Check out the live website: [Loopstudios Landing Page](https://clever-sunshine-3fbbf1.netlify.app/)
+
+## Built With
+
+- React.js
+- SCSS
+- JavaScript (ES6+)
+
+## Installation
+
+Install the dependencies and run the project
+
+```bash
+npm install
+npm start
+```
+
+## Features
+
+- Fully responsive design
+- Modern and clean user interface
+- Interactive navigation menu
+- Optimized images and assets
+- Smooth animations and transitions
+
+## Credits
+
+- Design by [Frontend Mentor](https://www.frontendmentor.io)
+- Implementation by [TheEyePatch]thawit (https://github.com/tacesept/)
