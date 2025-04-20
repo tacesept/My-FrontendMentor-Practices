@@ -8,14 +8,137 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  background-color: #000;
-  color: #fff;
-}
-/* 
+body { 
+  font-family: 'League Spartan', sans-serif; 
+} 
+
 button {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
- */
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+
+ @keyframes moveLeft {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes moveRight {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+.animation {
+  animation: fadeIn 1s ease-in-out;
+}
+ 
+.sm-screen__header { 
+  display: flex;
+  flex-direction: column;
+}
+
+.sm-screen__top {  
+  position: relative;
+  height: auto;
+  display: flex;
+  flex-direction: column; 
+   
+
+  &-header {
+    position: absolute; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    width: 100%; 
+    padding: 4.8rem 2.4rem;
+
+    div{
+      width: 2rem;
+    } 
+  }
+
+  &-buttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+
+    button{
+      padding: 2rem 2.4rem;
+      background-color: #000; 
+      transition: all 0.2s ease-in-out;
+
+      &:hover{
+        background-color: #fff;
+      }
+
+      &:hover svg path{
+        stroke: #000;
+      }
+
+      &:hover .arrow-left{
+        animation: moveLeft 1s ease-in-out infinite;
+      }
+
+      &:hover .arrow-right{
+        animation: moveRight 1s ease-in-out infinite;
+      }
+    } 
+  }
+}
+
+.sm-screen__bottom{
+  padding: 6rem 3.2rem 7.2rem;
+
+  h1{
+    font-size: 4rem; 
+    font-weight: 600;
+    letter-spacing: -1.67px; 
+    line-height: 35px;
+  }
+
+  p{
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.2rem;
+    letter-spacing: -0.33px;
+    padding-block: 1.5rem 4.1rem;
+    color: #A0A0A0;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 3rem; 
+
+    svg{
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover svg{
+      transform: translateX(20px);
+    }
+  }
+
+  span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    letter-spacing: 12.5px;
+    color: #000;
+  }
+}
+
+
