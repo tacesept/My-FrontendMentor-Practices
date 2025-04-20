@@ -17,7 +17,7 @@ A collection of Frontend Mentor challenges organized by difficulty level.
 - [Article Preview Component](./Newbie/7. article-preview-component-master) - [Live Demo](https://magnificent-pithivier-ec284b.netlify.app/)
 - [Interactive Rating Component](./Newbie/8. interactive-rating-component-main) - [Live Demo](https://steady-maamoul-3a83ed.netlify.app/)
 - [FAQ Accordion](./Newbie/9. faq-accordion-main) - [Live Demo](https://startling-gumption-a72896.netlify.app/)
-- [NFT Preview Card](./Newbie/10. nft-preview-card-component-main) - [Live Demo](https://nft-preview-card-component-main-1.netlify.app/)
+- [NFT Preview Card](./Newbie/10. nft-preview-card-component-main) - [Live Demo](https://extraordinary-swan-00bb66.netlify.app/)
 
 ## Junior Challenges
 
