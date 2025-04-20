@@ -26,14 +26,14 @@ A collection of Frontend Mentor challenges organized by difficulty level.
 - [Newsletter Sign Up](./Junior/3. newsletter-sign-up-with-success-message-main) - [Live Demo](https://splendid-marshmallow-3f8211.netlify.app/)
 - [Time Tracking Dashboard](./Junior/4. time-tracking-dashboard-main) - [Live Demo](https://warm-concha-5561a6.netlify.app/)
 - [Tip Calculator App](./Junior/5. tip-calculator-app-main) - [Live Demo](https://fascinating-pudding-f64fff.netlify.app/)
-- [Contact Form](./Junior/6. contact-form-main) - [Live Demo](https://contact-form-main-1.netlify.app/)
-- [News Homepage](./Junior/7. news-homepage-main) - [Live Demo](https://news-homepage-main-1.netlify.app/)
-- [BMI Calculator](./Junior/8. bmi-calculator) - [Live Demo](https://bmi-calculator-1.netlify.app/)
-- [Loopstudios Landing Page](./Junior/9. loopstudios-landing-page-main) - [Live Demo](https://loopstudios-landing-page-main-1.netlify.app/)
+- [Contact Form](./Junior/6. contact-form-main) - [Live Demo](https://spontaneous-squirrel-89d648.netlify.app/)
+- [News Homepage](./Junior/7. news-homepage-main) - [Live Demo](https://cosmic-scone-13762c.netlify.app/)
+- [BMI Calculator](./Junior/8. bmi-calculator) - [Live Demo](https://lambent-lamington-d0d15f.netlify.app/)
+- [Loopstudios Landing Page](./Junior/9. loopstudios-landing-page-main) - [Live Demo](https://clever-sunshine-3fbbf1.netlify.app/)
 
 ## Intermediate Challenges
 
-- [Password Generator App](./Intermediate/1. password-generator-app) - [Live Demo](https://password-generator-app-1.netlify.app/)
-- [Frontend Quiz App](./Intermediate/2. frontend-quiz-app) - [Live Demo](https://frontend-quiz-app-1.netlify.app/)
-- [E-commerce Product Page](./Intermediate/3. ecommerce-product-page-main) - [Live Demo](https://ecommerce-product-page-main-1.netlify.app/)
-- [Tic Tac Toe Game](./Intermediate/4. tic-tac-toe) - [Live Demo](https://tic-tac-toe-1.netlify.app/)
+- [Password Generator App](./Intermediate/1. password-generator-app) - [Live Demo](https://startling-moxie-14109b.netlify.app/)
+- [Frontend Quiz App](./Intermediate/2. frontend-quiz-app) - [Live Demo](https://imaginative-muffin-37d940.netlify.app/)
+- [E-commerce Product Page](./Intermediate/3. ecommerce-product-page-main) - [Live Demo](https://dulcet-cocada-51cf6a.netlify.app/)
+- [Tic Tac Toe Game](./Intermediate/4. tic-tac-toe) - [Live Demo](https://silly-heliotrope-085a4f.netlify.app/)
