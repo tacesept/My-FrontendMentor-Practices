@@ -1,5 +1,9 @@
 # My-FrontendMentor-Practices
 
+Hi! 👋 I'm a frontend developer who loves building things. This repository contains my solutions to various Frontend Mentor challenges, showcasing my skills in HTML, CSS, and JavaScript. These projects demonstrate my ability to create responsive, accessible, and well-structured web applications.
+
+If my skills seem like a good fit for your project, I’d love the opportunity to contribute—feel free to reach out! 😊
+
 A collection of Frontend Mentor challenges organized by difficulty level.
 
 ## Newbie Challenges
