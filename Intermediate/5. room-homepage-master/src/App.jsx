@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import SmallScreenHeader from "./components/SmallScreenHeader";
 import LargeScreenHeader from "./components/LargeScreenHeader";
 import Main from "./components/Main";
-import HeroImg from "./components/HeroImg";
+import HeroData from "./components/HeroData";
 
 function App() {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
   const [currentImg, setCurrentImg] = useState(0);
   const [translate, setTranslate] = useState(0);
   const [animate, setAnimate] = useState(false);
-  const heroLength = HeroImg.length;
+  const heroLength = HeroData.length;
 
   const headerProps = {
     currentImg,

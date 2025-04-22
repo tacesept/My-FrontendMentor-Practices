@@ -1,10 +1,12 @@
-import HeroImg from "./HeroImg";
+import HeroData from "./HeroData";
 import { useState, useEffect } from "react";
 import SlideBtns from "./SlideBtns";
+import HeroImgRender from "./HeroImgRender";
+import HeroContent from "./HeroContent";
+import NavLinks from "./NavLinks";
 
 export default function SmallScreenHeader(props) {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const navText = ["home", "shop", "about", "contact"];
+  const [menuOpen, setMenuOpen] = useState(false); 
 
   useEffect(() => {
     const closeMenu = () => setMenuOpen(false);
@@ -37,7 +39,7 @@ export default function SmallScreenHeader(props) {
   };
 
   return (
-    <header className="sm-screen__header">
+    <header className="sm-screen">
       <div
         className={`overlay ${menuOpen ? "active" : ""}`}
         onClick={handleOverlayClick}
@@ -56,30 +58,12 @@ export default function SmallScreenHeader(props) {
             />
           </svg>
         </button>
-        <nav>
-          <ul>
-            {navText.map((text, index) => (
-              <li key={index}>
-                <a href="#">{text}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <NavLinks />
       </div>
 
-      <div className="sm-screen__top">
-        <ul style={{ marginInline: `${props.translate}%` }}>
-          {HeroImg.map((img, index) => (
-            <li key={index}>
-              <img
-                src={img.srcM}
-                alt={img.alt}
-                className={index === props.currentImg ? "active" : ""}
-              />
-            </li>
-          ))}
-        </ul>
-        <div className="sm-screen__top-header">
+      <div className="sm-screen__hero">
+        <HeroImgRender {...props} />
+        <div className="sm-screen__hero-header">
           <button
             aria-expanded={menuOpen}
             aria-controls="menu"
@@ -96,21 +80,7 @@ export default function SmallScreenHeader(props) {
         </div>
         <SlideBtns {...props}/>
       </div>
-
-      <div className={`sm-screen__bottom ${props.animate ? "animate" : ""}`}>
-        <h1>{HeroImg[props.currentImg].title}</h1>
-        <p>{HeroImg[props.currentImg].description}</p>
-        <button>
-          <span>Shop now</span>
-          <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
-              fill="#000"
-              fillRule="nonzero"
-            />
-          </svg>
-        </button>
-      </div>
+      <HeroContent {...props} />
     </header>
   );
 }

@@ -1,5 +1,8 @@
-import HeroImg from "./HeroImg"; 
+import HeroData from "./HeroData"; 
 import SlideBtns from "./SlideBtns";
+import HeroContent from "./HeroContent"; 
+import NavLinks from "./NavLinks";
+
 export default function LargeScreenHeader(props) {  
 
   return (
@@ -15,43 +18,17 @@ export default function LargeScreenHeader(props) {
               />
             </svg>
           </a>
-          <nav>
-            <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Services</a>
-              </li>
-              <li>
-                <a href="#">Contact</a>
-              </li>
-            </ul>
-          </nav>
+          <NavLinks />
         </div>
 
         <img
-          className="desktop-hero-img"
-          src={HeroImg[props.currentImg].srcD}
-          alt={HeroImg[props.currentImg].alt}
+          className={props.animate ? "animateImg" : ""}
+          src={HeroData[props.currentImg].srcD}
+          alt={HeroData[props.currentImg].alt}
         />
       </div>
       <div className="large-screen__content">
-        <h1>{HeroImg[props.currentImg].title}</h1>
-        <p>{HeroImg[props.currentImg].description}</p>
-        <button>
-          <span>Shop now</span>
-          <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
-              fill="#000"
-              fillRule="nonzero"
-            />
-          </svg>
-        </button> 
+        <HeroContent {...props} />
         <SlideBtns {...props}/>
       </div>
     </header>

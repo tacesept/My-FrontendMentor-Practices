@@ -1,4 +1,4 @@
-const HeroImg = [
+const HeroData = [
     {
         id: 1,
         srcM: "./images/mobile-image-hero-1.jpg",
@@ -25,4 +25,4 @@ const HeroImg = [
     }
 ]
 
-export default HeroImg;
+export default HeroData;

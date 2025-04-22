@@ -9,7 +9,7 @@ export default function SlideBtns({ ...props }) {
 
       setTimeout(() => {
         props.setAnimate(false);
-      }, 1000);
+      }, 300);
     } else if (direction === "left" && props.currentImg > 0) {
       if (props.animate) return;
       props.setCurrentImg(props.currentImg - 1);
@@ -18,7 +18,7 @@ export default function SlideBtns({ ...props }) {
 
       setTimeout(() => {
         props.setAnimate(false);
-      }, 1000);
+      }, 300);
     }
   };
 
@@ -27,6 +27,7 @@ export default function SlideBtns({ ...props }) {
       <button
         aria-label="previous image"
         onClick={() => handleImgChange("left")}
+        className={props.currentImg === 0 ? "disabled" : ""}
       >
         <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -37,7 +38,11 @@ export default function SlideBtns({ ...props }) {
           />
         </svg>
       </button>
-      <button aria-label="next image" onClick={() => handleImgChange("right")}>
+      <button
+        aria-label="next image"
+        onClick={() => handleImgChange("right")}
+        className={props.currentImg === props.heroLength - 1 ? "disabled" : ""}
+      >
         <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M1 0l12 12L1 24"
