@@ -1,7 +1,9 @@
+import Hero from "../sections/Hero";
+
 export default function Main() {
   return (
-    <main>
-      <h1>Main</h1>
+    <main className="mt-20 md:mt-27">
+      <Hero /> 
     </main>
-  )
+  );
 }

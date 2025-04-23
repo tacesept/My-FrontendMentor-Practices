@@ -1,9 +1,5 @@
-@import 'tailwindcss';
+@import 'tailwindcss'; 
 
-:root {
-  --navy-blue: #5267DF;
-  --orange: #FA5959;
-  --black: #242A45;
-  --gray: #9194A2;
-}
-
+body {
+    font-family: 'Rubik', sans-serif;   
+} 

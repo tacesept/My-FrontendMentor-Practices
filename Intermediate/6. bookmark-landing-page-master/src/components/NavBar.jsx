@@ -1,4 +1,4 @@
-export default function NavBar() {
+export default function NavBar({ className }) {
     const navItems = [
         {
             label: 'Features',
@@ -15,8 +15,8 @@ export default function NavBar() {
     ]
 
   return (
-    <nav>
-      <ul>
+    <nav className={className}>
+      <ul className="flex items-center gap-x-12">
         {navItems.map((item) => (
             <li key={item.label}>
                 <a href={item.href}>{item.label}</a>
