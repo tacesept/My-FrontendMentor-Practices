@@ -1,12 +1,15 @@
 import NavBar from "../components/NavBar";
 import Button from "../components/Button";
-export default function Header() {
+
+export default function Header({ handleMenuOpen, menuOpen }) {
   return (
     <header
-      className="flex justify-between items-center px-4 md:px-6 lg:px-8 pt-10 md:pt-12
-      max-w-screen-lg mx-auto "
+      className="
+        flex justify-between items-center 
+        px-4 md:px-6 lg:px-8 pt-10 md:pt-12
+        max-w-screen-lg mx-auto "
     >
-      <a href="#">
+      <a href="#" className="z-20">
         <svg width="148" height="25" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fillRule="evenodd">
             <path
@@ -24,20 +27,38 @@ export default function Header() {
           </g>
         </svg>
       </a>
-      <button className="cursor-pointer md:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15">
-          <path
-            fill="#242A45"
-            fillRule="evenodd"
-            d="M0 0h18v3H0V0zm0 6h18v3H0V6zm0 6h18v3H0v-3z"
-          />
-        </svg>
+      <button
+        onClick={handleMenuOpen}
+        className="cursor-pointer md:hidden z-20"
+      >
+        {!menuOpen ? (
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15">
+            <path
+              fill="#242A45"
+              fillRule="evenodd"
+              d="M0 0h18v3H0V0zm0 6h18v3H0V6zm0 6h18v3H0v-3z"
+            />
+          </svg>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15">
+            <path
+              fill="#242A45"
+              fillRule="evenodd"
+              d="M8 5.379L13.303.075l2.122 2.122L10.12 7.5l5.304 5.303-2.122 2.122L8 9.62l-5.303 5.304-2.122-2.122L5.88 7.5.575 2.197 2.697.075 8 5.38z"
+            />
+          </svg>
+        )}
       </button>
-      <div className="hidden md:flex items-center gap-x-12 ">
-        <NavBar />
+      <div
+        className="
+        hidden md:flex items-center 
+        gap-x-12 "
+      >
+        <NavBar variant="text-[#242A45]" />
         <Button
-          variant="bg-[#FA5959] text-white border-[#FA5959] hover:bg-white 
-          hover:text-[#FA5959] transition-all duration-300"
+          variant="
+          bg-[#FA5959] text-white border-[#FA5959] hover:bg-white hover:text-[#FA5959]
+          transition-all duration-300"
         >
           LOGIN
         </Button>

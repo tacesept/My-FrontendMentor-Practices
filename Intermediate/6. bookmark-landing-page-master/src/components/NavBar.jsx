@@ -1,4 +1,4 @@
-export default function NavBar({ className }) {
+export default function NavBar({ variant, layout }) {
     const navItems = [
         {
             label: 'Features',
@@ -15,14 +15,14 @@ export default function NavBar({ className }) {
     ]
 
   return (
-    <nav className={className}>
-      <ul className="flex items-center gap-x-12">
+    <nav className="text-sm">
+      <ul className={`flex items-center gap-x-12 ${layout}`}>
         {navItems.map((item) => (
-            <li key={item.label}>
-                <a href={item.href}>{item.label}</a>
-            </li>
+          <li className={`${variant} hover:text-[#FA5959]`} key={item.label}>
+            <a href={item.href}>{item.label}</a>
+          </li>
         ))}
       </ul>
     </nav>
-  )
+  );
 }
